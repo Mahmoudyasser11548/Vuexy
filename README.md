@@ -1,0 +1,2 @@
+# Vuexy
+Vuexy Theme
