@@ -1,11 +1,15 @@
 import { rest } from 'msw'
-import { updateBookmarked } from '../redux/navbar'
 
 export const handlers = [
-    rest.get('/api/bookmarks/data', (req, res, ctx) => {
-        return res(ctx.json())
-    }),
-    rest.post(`/api/bookmarks/update/${updateBookmarked.id}`, (req, res, ctx) => {
-        return res()
-    }),
+    rest.post('http://localhost:3000/rules', (req, res, ctx) => {
+        return res(ctx.json(
+            {
+                rule: "RefundRequest",
+                property: "Integer",
+                operator: "Greater than",
+                value: "60",
+                id: 1
+            }
+        ))
+    })
 ]
