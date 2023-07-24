@@ -9,8 +9,8 @@ export const addRule = createAsyncThunk("rules/add", async (rule) => {
   return res.data
 })
 
-export const editRule = createAsyncThunk("rules/edit", async (id, rule) => {
-  const res = await axios.put(`http://localhost:3000/rules/${id}`, rule)
+export const editRule = createAsyncThunk("rules/edit", async ({id}) => {
+  const res = await axios.put(`http://localhost:3000/rules/${id}`)
   return res.data
 })
 
@@ -50,7 +50,6 @@ export const layoutSlice = createSlice({
         state.Rule[index] = action.payload
       })
       .addCase(deleteRule.fulfilled, (state, action) => {
-        state.loading = false
         return state.Rule.filter(rule => rule.id !== action.payload.id)
       })
   }

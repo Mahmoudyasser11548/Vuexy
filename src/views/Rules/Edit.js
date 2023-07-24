@@ -41,11 +41,12 @@ const Edit = ({rule = {}}) => {
 
   const initialValues = (rule) => {
     return {
+      id: rule.id || '',
       rule: rule.rule || '',
       property: rule.property || '',
       operator: rule.operator || '',
       value: rule.value || '',
-      avtivateRule: rule.avtivateRule || '' 
+      activate: rule.activate || '' 
     }
   }
 
@@ -54,12 +55,12 @@ const Edit = ({rule = {}}) => {
     property: Yup.string().required(),
     operator: Yup.string().required(),
     value: Yup.string().required(),
-    avtivateRule: Yup.string().required()
+    activate: Yup.string().required()
   })
 
   const onSubmit = (values) => {
     if (values.id) {
-      dispatch(editRule({ ...values, id: rule.id }))
+      dispatch(editRule({id: rule.id, ...values}))
     } else {
       dispatch(addRule({ ...values }))
     }
@@ -104,7 +105,7 @@ const Edit = ({rule = {}}) => {
                   />
 
                   <Checkbox
-                    name="activateRule"
+                    name="activate"
                     options={[{key: 'enable', value:'enable'}]}
                   />
                 </Row>

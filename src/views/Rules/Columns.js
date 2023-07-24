@@ -36,7 +36,7 @@ export const Columns = (deleteHandler, editHandler) => {
       cell: (row) => (
         <>
           <Button
-            onClick={() => editHandler(row.id)}
+            onClick={() => editHandler(row)}
             color="flat-danger"
             className="btn-icon"
             size="sm"

@@ -17,7 +17,7 @@ const List = () => {
   const deleteToggle = () => setModalDelete(!modalDelete)
   const updateToggle = () => setModalUpdate(!modalUpdate)
 
-  const deleteHandler = ({ id }) => {
+  const deleteHandler = (id) => {
     setRuleId(id)
     deleteToggle()
   }
@@ -46,6 +46,7 @@ const List = () => {
         loading={loading || false}
         columns={Columns(deleteHandler, editHandler)}
         data={Rule}
+        pagination
       />
       <CustomModal 
         title="Delete Rule"
@@ -56,7 +57,8 @@ const List = () => {
         confirmTitle='Delete'
         confirmBtn={true}
         cancelBtn={true}
-      />
+        modalFooter={true}
+        />
 
       <CustomModal 
         title="Edit Rule"
@@ -65,6 +67,7 @@ const List = () => {
         body={<Edit 
           rule={rule}
         />}
+        modalFooter={false}
         confirm={confirmUpdate}
         confirmTitle='Save Changes'
       />
