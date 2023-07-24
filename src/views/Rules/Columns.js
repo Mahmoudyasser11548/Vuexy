@@ -22,11 +22,11 @@ export const Columns = (deleteHandler, editHandler) => {
     },
     {
       name: 'Activate',
-      selector: row => row.avtivateRule,
+      selector: row => row.activate,
       cell: (row) => (
         <>
           {
-            row.avtivateRule === 'enable' ? <ThumbsUp size={20} /> : <ThumbsDown size={20} /> 
+            row.activate === 'enable' ? <ThumbsUp size={20} /> : <ThumbsDown size={20} /> 
           }
         </>
       )
