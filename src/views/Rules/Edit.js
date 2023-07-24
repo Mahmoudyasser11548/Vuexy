@@ -44,7 +44,7 @@ const Edit = () => {
     property: '' || 'String',
     operator: '' || 'Equals',
     value: '',
-    avtivateRule: '' || 'enable'
+    avtivateRule: '' 
   }
 
   const validationSchema = Yup.object().shape({

@@ -35,11 +35,11 @@ export const Columns = () => {
     },
     {
       name: 'Activate',
-      selector: row => row.enable,
+      selector: row => row.avtivateRule,
       cell: (row) => (
         <>
           {
-            row.enable === 'enable' ? <ThumbsUp size={20} /> : <ThumbsDown size={20} /> 
+            row.avtivateRule === 'enable' ? <ThumbsUp size={20} /> : <ThumbsDown size={20} /> 
           }
         </>
       )

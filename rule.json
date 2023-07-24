@@ -39,6 +39,17 @@
       "value": "Pistol",
       "activate": "enable",
       "id": 5
+    },
+    {
+      "rule": "Refund",
+      "property": "String",
+      "operator": "Equals",
+      "value": "Guns",
+      "avtivateRule": "enable",
+      "activateRule": [
+        "enable"
+      ],
+      "id": 6
     }
   ]
 }
