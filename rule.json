@@ -5,6 +5,7 @@
       "property": "Integer",
       "operator": "Greater than",
       "value": "60",
+      "activate": "enable",
       "id": 1
     },
     {
@@ -12,6 +13,7 @@
       "property": "String",
       "operator": "Not Contains",
       "value": "Sex",
+      "activate": "enable",
       "id": 2
     },
     {
@@ -19,84 +21,24 @@
       "property": "Integer",
       "operator": "Greater than",
       "value": "50",
+      "activate": "enable",
       "id": 3
     },
     {
       "rule": "Refund",
-      "property": "Integer",
+      "property": "String",
       "operator": "Equals",
-      "value": "100",
-      "avtivateRule": "enable",
-      "activateRule": [
-        "enable"
-      ],
+      "value": "kill",
+      "activate": "enable",
       "id": 4
     },
     {
-      "rule": "Refund",
-      "property": "Integer",
+      "rule": "RefundRequest",
+      "property": "String",
       "operator": "Equals",
-      "value": "100",
-      "avtivateRule": "enable",
-      "activateRule": [
-        "enable"
-      ],
+      "value": "Pistol",
+      "activate": "enable",
       "id": 5
-    },
-    {
-      "rule": "Refund",
-      "property": "Integer",
-      "operator": "Equals",
-      "value": "100",
-      "avtivateRule": "enable",
-      "activateRule": [
-        "enable"
-      ],
-      "id": 6
-    },
-    {
-      "rule": "Refund",
-      "property": "Integer",
-      "operator": "Equals",
-      "value": "100",
-      "avtivateRule": "enable",
-      "activateRule": [
-        "enable"
-      ],
-      "id": 7
-    },
-    {
-      "rule": "Refund",
-      "property": "Integer",
-      "operator": "Equals",
-      "value": "100",
-      "avtivateRule": "enable",
-      "activateRule": [
-        "enable"
-      ],
-      "id": 8
-    },
-    {
-      "rule": "Refund",
-      "property": "Integer",
-      "operator": "Equals",
-      "value": "100",
-      "avtivateRule": "enable",
-      "activateRule": [
-        "enable"
-      ],
-      "id": 9
-    },
-    {
-      "rule": "Refund",
-      "property": "Integer",
-      "operator": "Equals",
-      "value": "100",
-      "avtivateRule": "enable",
-      "activateRule": [
-        "enable"
-      ],
-      "id": 10
     }
   ]
 }
