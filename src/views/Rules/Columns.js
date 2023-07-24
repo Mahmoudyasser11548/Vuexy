@@ -1,20 +1,7 @@
 import { Edit, ThumbsDown, ThumbsUp, Trash2 } from "react-feather"
-import { useDispatch } from "react-redux"
 import { Button } from "reactstrap"
-import { deleteRule, editRule } from "../../redux/rules"
-import { useParams } from "react-router-dom"
 
-export const Columns = () => {
-  const {id} = useParams()
-  const dispatch = useDispatch()
-
-  const handleDelete = () => {
-    dispatch(deleteRule(id))
-  }
-
-  const handleEdit = () => {
-    dispatch(editRule(id))
-  }
+export const Columns = (deleteHandler, editHandler) => {
 
   return [
     {
@@ -46,10 +33,10 @@ export const Columns = () => {
     },
     {
       name: 'Actions',
-      cell: () => (
+      cell: (row) => (
         <>
           <Button
-            onClick={() => handleEdit()}
+            onClick={() => editHandler(row.id)}
             color="flat-danger"
             className="btn-icon"
             size="sm"
@@ -58,7 +45,7 @@ export const Columns = () => {
           </Button>
 
           <Button
-            onClick={() => handleDelete()}
+            onClick={() => deleteHandler(row.id)}
             color="flat-success"
             className="btn-icon"
             size="sm"

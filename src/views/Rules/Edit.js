@@ -6,10 +6,10 @@ import InputField from '../../Components/InputField'
 import Checkbox from '../../Components/Checkbox'
 import { useDispatch, useSelector } from 'react-redux'
 import { Form, Formik } from 'formik'
-import { addRule } from '../../redux/rules'
+import { addRule, editRule } from '../../redux/rules'
 import * as Yup from 'yup'
 
-const Edit = () => {
+const Edit = ({rule = {}}) => {
   const dispatch = useDispatch()
   const {loading, error} = useSelector(state => state.rule)
 
@@ -39,12 +39,14 @@ const Edit = () => {
     {key: 'RefundRequest', value: 'RefundRequest'}
   ]
 
-  const initialValues = {
-    rule: '',
-    property: '' || 'String',
-    operator: '' || 'Equals',
-    value: '',
-    avtivateRule: '' 
+  const initialValues = (rule) => {
+    return {
+      rule: rule.rule || '',
+      property: rule.property || '',
+      operator: rule.operator || '',
+      value: rule.value || '',
+      avtivateRule: rule.avtivateRule || '' 
+    }
   }
 
   const validationSchema = Yup.object().shape({
@@ -56,7 +58,11 @@ const Edit = () => {
   })
 
   const onSubmit = (values) => {
-    dispatch(addRule({...values}))
+    if (values.id) {
+      dispatch(editRule({ ...values, id: rule.id }))
+    } else {
+      dispatch(addRule({ ...values }))
+    }
   }
 
   return (
@@ -65,13 +71,13 @@ const Edit = () => {
       <CardBody>
         <Formik 
           onSubmit={onSubmit}
-          initialValues={initialValues}
+          initialValues={initialValues(rule)}
           validationSchema={validationSchema}
         >
           {({values}) => {
             return (
               <Form>
-                <Row>
+                <Row className='flex-column'>
                   <RadioButton 
                     name="rule"
                     label="Select Rule"
