@@ -1,66 +1,33 @@
 import React from 'react'
-import { Card, CardBody } from 'reactstrap'
-import * as Yup from 'yup'
-import RadioButton from '../../Components/RadioButton'
-import { Form, Formik } from 'formik'
-import Edit from './Edit'
-import { useDispatch } from 'react-redux'
-import { addRule } from '../../redux/rules'
+import { Button, Card, CardBody } from 'reactstrap'
+import { useNavigate } from 'react-router-dom'
+import { Plus } from 'react-feather'
+import List from './List'
 
 const Rules = () => {
-  const dispatch = useDispatch()
-
-  const RadioOptions = [
-    {key: 'Refund', value: 'Refund'},
-    {key: 'RefundRequest', value: 'RefundRequest'}
-  ]
-
-  const initialValues = {
-    rule: '',
-    property: '' || 'String',
-    operator: '' || 'Equals',
-    value: ''
-  }
-
-  const validationSchema = Yup.object().shape({
-    rule: Yup.string().required(),
-    property: Yup.string().required(),
-    operator: Yup.string().required(),
-    value: Yup.string().required()
-  })
-
-  const onSubmit = (values) => {
-    dispatch(addRule({...values}))
-  }
+  const navigate = useNavigate()
 
   return (
     <>
     <Card>
       <CardBody>
-        <h2 className='text-center'>Rules</h2>
-        <Formik
-          onSubmit={onSubmit}
-          initialValues={initialValues}
-          validationSchema={validationSchema}
-        >
-            {({values}) => {
-              
-              return (
-                <Form>
-                  <RadioButton 
-                    name="rule"
-                    label="Select Rule"
-                    options={RadioOptions}
-                    />
-                  {values.rule !== '' ? <Edit values={values}/> : ''}
-                  {console.log(values)}
-                </Form>
-              )
-            }}
-        </Formik>
+        <div className='d-flex justify-content-between align-items-center'>            
+          <h2 className='mb-0'>Rules</h2>
+          <Button
+            color="primary"
+            className="btn-primary ml-2 rounded-pill"
+            onClick={() => navigate('/edit')}
+          >
+            <Plus size={14} />
+            <span className="align-middle ml-25 ms-1">
+              Create Rule
+            </span>
+          </Button>
+        </div>
+        <hr />
+        <List />
       </CardBody>
     </Card>
-      
     </>
   )
 }

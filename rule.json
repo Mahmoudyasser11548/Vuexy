@@ -20,6 +20,83 @@
       "operator": "Greater than",
       "value": "50",
       "id": 3
+    },
+    {
+      "rule": "Refund",
+      "property": "Integer",
+      "operator": "Equals",
+      "value": "100",
+      "avtivateRule": "enable",
+      "activateRule": [
+        "enable"
+      ],
+      "id": 4
+    },
+    {
+      "rule": "Refund",
+      "property": "Integer",
+      "operator": "Equals",
+      "value": "100",
+      "avtivateRule": "enable",
+      "activateRule": [
+        "enable"
+      ],
+      "id": 5
+    },
+    {
+      "rule": "Refund",
+      "property": "Integer",
+      "operator": "Equals",
+      "value": "100",
+      "avtivateRule": "enable",
+      "activateRule": [
+        "enable"
+      ],
+      "id": 6
+    },
+    {
+      "rule": "Refund",
+      "property": "Integer",
+      "operator": "Equals",
+      "value": "100",
+      "avtivateRule": "enable",
+      "activateRule": [
+        "enable"
+      ],
+      "id": 7
+    },
+    {
+      "rule": "Refund",
+      "property": "Integer",
+      "operator": "Equals",
+      "value": "100",
+      "avtivateRule": "enable",
+      "activateRule": [
+        "enable"
+      ],
+      "id": 8
+    },
+    {
+      "rule": "Refund",
+      "property": "Integer",
+      "operator": "Equals",
+      "value": "100",
+      "avtivateRule": "enable",
+      "activateRule": [
+        "enable"
+      ],
+      "id": 9
+    },
+    {
+      "rule": "Refund",
+      "property": "Integer",
+      "operator": "Equals",
+      "value": "100",
+      "avtivateRule": "enable",
+      "activateRule": [
+        "enable"
+      ],
+      "id": 10
     }
   ]
 }
