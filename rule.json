@@ -1,36 +1,60 @@
 {
   "rules": [
     {
+      "id": 5,
+      "rule": "Refund",
+      "property": "Integer",
+      "operator": "Maximum",
+      "value": "50",
+      "activate": true
+    },
+    {
+      "id": 6,
       "rule": "RefundRequest",
       "property": "Integer",
       "operator": "Greater than",
       "value": "50",
-      "activate": "enable",
-      "id": 1
+      "activate": true
     },
     {
-      "rule": "Refund",
-      "property": "String",
-      "operator": "Equals",
-      "value": "kill",
-      "activate": "enable",
-      "id": 2
+      "id": 7,
+      "rule": "RefundRequest",
+      "property": "Integer",
+      "operator": "Greater than",
+      "value": "100",
+      "activate": true
     },
     {
-      "rule": "Refund",
-      "property": "String",
-      "operator": "Equals",
-      "value": "kill",
-      "activate": "",
-      "id": 3
+      "id": 8,
+      "rule": "RefundRequest",
+      "property": "Integer",
+      "operator": "Greater than",
+      "value": "100",
+      "activate": true
     },
     {
+      "id": 9,
+      "rule": "RefundRequest",
+      "property": "Integer",
+      "operator": "Greater than",
+      "value": "100",
+      "activate": true
+    },
+    {
+      "id": 10,
+      "rule": "RefundRequest",
+      "property": "Integer",
+      "operator": "Greater than",
+      "value": "10000",
+      "activate": false
+    },
+    {
+      "id": 11,
       "rule": "Refund",
-      "property": "String",
-      "operator": "Equals",
-      "value": "kill",
-      "activate": "",
-      "id": 4
+      "property": "Integer",
+      "operator": "Maximum",
+      "value": "1000",
+      "activate": true
     }
   ]
 }

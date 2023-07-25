@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import CustomDataTable from '../../Components/customDataTable'
 import { Columns } from './Columns'
 import { useDispatch, useSelector } from 'react-redux'
-import { deleteRule, editRule, getRule } from '../../redux/rules'
+import { deleteRule, getRule } from '../../redux/rules'
 import CustomModal from '../../Components/CustomModal'
 import Edit from './Edit'
 
@@ -29,11 +29,6 @@ const List = () => {
 
   const confirmDelete = () => {
     dispatch(deleteRule(ruleId))
-  }
-
-  const confirmUpdate = (row) => {
-    setRule(row)
-    dispatch(editRule())
   }
 
   useEffect(() => {
@@ -68,8 +63,6 @@ const List = () => {
           rule={rule}
         />}
         modalFooter={false}
-        confirm={confirmUpdate}
-        confirmTitle='Save Changes'
       />
     </>
   )

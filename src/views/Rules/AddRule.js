@@ -3,7 +3,7 @@ import { Card, CardBody, Row } from 'reactstrap'
 import RadioButton from '../../Components/RadioButton'
 import { useDispatch } from 'react-redux'
 import { Form, Formik } from 'formik'
-import { editRule } from '../../redux/rules'
+import { addRule } from '../../redux/rules'
 import * as Yup from 'yup'
 import Inputs from './Inputs'
 
@@ -12,17 +12,16 @@ const RadioOptions = [
   {key: 'RefundRequest', value: 'RefundRequest'}
 ]
 
-const Edit = ({rule = {}}) => {
+const AddRule = () => {
   const dispatch = useDispatch()
 
-  const initialValues = (rule) => {
-    return {
-      rule: rule?.rule || '',
-      property: rule?.property || '',
-      operator: rule?.operator || '',
-      value: rule?.value || '',
-      activate: rule?.activate || '' 
-    }
+  const initialValues = {
+    id: '',
+    rule: '',
+    property: '',
+    operator: '',
+    value: '',
+    activate: false || true
   }
 
   const validationSchema = Yup.object().shape({
@@ -33,9 +32,9 @@ const Edit = ({rule = {}}) => {
     activate: Yup.string().required()
   })
 
-  const onSubmit = (values) => {
-    console.log({id: rule.id, ...values}, rule, values)
-    dispatch(editRule({id: rule.id, ...values}))
+  const onSubmit = (values, {resetForm}) => {
+    dispatch(addRule(values))
+    resetForm()
   }
 
   return (
@@ -44,14 +43,21 @@ const Edit = ({rule = {}}) => {
       <CardBody>
         <Formik 
           onSubmit={onSubmit}
-          initialValues={initialValues(rule)}
+          enableReinitialize={true}
+          initialValues={initialValues}
           validationSchema={validationSchema}
         >
-          {({values, handleSubmit, isSubmitting}) => {
+          {({values}) => {
+            console.log(values)
             return (
-              <Form onSubmit={handleSubmit}>
+              <Form>
                 <Row className='flex-column'>
-                  <Inputs isSubmitting={isSubmitting} values={values} />
+                  <RadioButton 
+                    name="rule"
+                    label="Select Rule"
+                    options={RadioOptions}
+                  />
+                  {values.rule !== '' ? <Inputs values={values} /> : ''}
                 </Row>
               </Form>
             )
@@ -63,4 +69,4 @@ const Edit = ({rule = {}}) => {
   )
 }
 
-export default Edit
+export default AddRule

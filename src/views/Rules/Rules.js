@@ -1,12 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Button, Card, CardBody } from 'reactstrap'
-import { useNavigate } from 'react-router-dom'
 import { Plus } from 'react-feather'
 import List from './List'
+import CustomModal from '../../Components/CustomModal'
+import AddRule from './AddRule'
 
 const Rules = () => {
-  const navigate = useNavigate()
-
+  const [modalCreate, setModalCreate] = useState(false)
+  const createToggle = () => setModalCreate(!modalCreate)
+  
   return (
     <>
     <Card>
@@ -16,7 +18,7 @@ const Rules = () => {
           <Button
             color="primary"
             className="btn-primary ml-2 rounded-pill"
-            onClick={() => navigate('/edit')}
+            onClick={() => createToggle()}
           >
             <Plus size={14} />
             <span className="align-middle ml-25 ms-1">
@@ -26,6 +28,13 @@ const Rules = () => {
         </div>
         <hr />
         <List />
+        <CustomModal 
+          title="Create Rule"
+          toggle={createToggle}
+          modal={modalCreate}
+          body={<AddRule />}
+          modalFooter={false}
+        />
       </CardBody>
     </Card>
     </>

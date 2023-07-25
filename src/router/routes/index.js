@@ -55,10 +55,6 @@ const Routes = [
     element: <Rules />
   },
   {
-    path: "/edit",
-    element: <Edit />
-  },
-  {
     path: "/login",
     element: <Login />,
     meta: {

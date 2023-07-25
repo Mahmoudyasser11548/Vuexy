@@ -26,7 +26,7 @@ export const Columns = (deleteHandler, editHandler) => {
       cell: (row) => (
         <>
           {
-            row.activate === 'enable' ? <ThumbsUp size={20} /> : <ThumbsDown size={20} /> 
+            row.activate ? <ThumbsUp size={20} /> : <ThumbsDown size={20} /> 
           }
         </>
       )
