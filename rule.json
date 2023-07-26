@@ -1,27 +1,11 @@
 {
   "rules": [
     {
-      "id": 5,
-      "rule": "Refund",
-      "property": "Integer",
-      "operator": "Maximum",
-      "value": "50",
-      "activate": true
-    },
-    {
-      "id": 6,
-      "rule": "RefundRequest",
-      "property": "Integer",
-      "operator": "Greater than",
-      "value": "50",
-      "activate": true
-    },
-    {
       "id": 7,
       "rule": "RefundRequest",
       "property": "Integer",
-      "operator": "Greater than",
-      "value": "100",
+      "operator": "Maximum",
+      "value": "10000",
       "activate": true
     },
     {

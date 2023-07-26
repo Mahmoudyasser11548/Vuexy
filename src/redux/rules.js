@@ -10,9 +10,8 @@ export const addRule = createAsyncThunk("rules/add", async (rule) => {
   return res.data
 })
 
-export const editRule = createAsyncThunk('rules/edit', async ({id}) => {
-  const res = await axios.put(`${API_BASE_URL}/${id}`)
-  console.log({res, rule, id})
+export const editRule = createAsyncThunk('rules/edit', async (rule) => {
+  const res = await axios.put(`${API_BASE_URL}/${rule.id}`, rule)
   return res.data
 })
 
@@ -49,7 +48,7 @@ export const ruleSlice = createSlice({
     .addCase(editRule.fulfilled, (state, action) => {
       state.loading = false
       const index = state.Rule.findIndex((rule) => rule.id === action.payload.id)
-      if (index) {
+      if (index > -1) {
         state.Rule[index] = action.payload
       }
     })
