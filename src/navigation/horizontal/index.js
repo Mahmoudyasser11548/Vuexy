@@ -1,4 +1,4 @@
-import { Mail, Home } from "react-feather"
+import { Mail, Home, List } from "react-feather"
 import React from "react"
 export default [
   {
@@ -16,7 +16,7 @@ export default [
   {
     id: "rules",
     title: "Rules",
-    icon: <Mail size={20} />,
+    icon: <List size={20} />,
     navLink: "/rules"
   }
 ]

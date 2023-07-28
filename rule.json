@@ -1,19 +1,67 @@
 {
   "rules": [
     {
-      "id": 3,
-      "rule": "Refund",
+      "id": 2,
+      "rule": "RefundRequest",
       "property": "String",
-      "operator": "Contains",
-      "value": "Ahmeds",
+      "operator": "Equals",
+      "value": "000",
+      "activate": true
+    },
+    {
+      "id": 3,
+      "rule": "RefundRequest",
+      "property": "String",
+      "operator": "Not Contains",
+      "value": "Sex",
       "activate": true
     },
     {
       "id": 4,
+      "rule": "RefundRequest",
+      "property": "String",
+      "operator": "Starts With",
+      "value": "kills",
+      "activate": false
+    },
+    {
+      "id": 5,
+      "rule": "Refund",
+      "property": "Integer",
+      "operator": "Less than",
+      "value": "190",
+      "activate": false
+    },
+    {
+      "id": 6,
+      "rule": "RefundRequest",
+      "property": "Integer",
+      "operator": "Greater than",
+      "value": "10000",
+      "activate": true
+    },
+    {
+      "id": 7,
+      "rule": "RefundRequest",
+      "property": "String",
+      "operator": "Equals",
+      "value": "Pistols",
+      "activate": true
+    },
+    {
+      "id": 8,
+      "rule": "RefundRequest",
+      "property": "Integer",
+      "operator": "Minimum",
+      "value": "90",
+      "activate": false
+    },
+    {
+      "id": 9,
       "rule": "Refund",
       "property": "String",
       "operator": "Not Contains",
-      "value": "Pistol",
+      "value": "Bullying",
       "activate": true
     }
   ]
