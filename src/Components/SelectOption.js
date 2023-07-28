@@ -12,15 +12,15 @@ const SelectOption = (prop) => {
         {...rest} 
         className="w-100 form-control" 
         id='select'
-
       >
+        <option defaultValue>{name} name ...</option>          
         {
           options.map(option => {
-            return (                
+            return (      
               <option 
                 className='dropdown-item'
                 value={option.value} 
-                key={option.value}
+                key={option.key}
               >
                 {option.key}
               </option>

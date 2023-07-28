@@ -1,59 +1,48 @@
-import { Edit, ThumbsDown, ThumbsUp, Trash2 } from "react-feather"
+import { classNames } from "primereact/utils"
+import { Edit2, Trash2 } from "react-feather"
 import { Button } from "reactstrap"
+import { TriStateCheckbox } from 'primereact/tristatecheckbox'
 
 export const Columns = (deleteHandler, editHandler) => {
+  
+  const editAndDeleteTemplate = () => {
+    return (
+      <>
+        <Button
+          onClick={() => editHandler()}
+          color="flat-danger"
+          className="btn-icon"
+          size="sm"
+          >
+          <Edit2 size={20} />
+        </Button>
+  
+        <Button
+          onClick={() => deleteHandler()}
+          color="flat-success"
+          className="btn-icon"
+          size="sm"
+        >
+          <Trash2 size={20} />
+        </Button>
+      </>
+    )
+  }
+
+  const activateTemplate = (rowData) => {
+    return <i className={classNames('pi', { 'true-icon pi-check-circle': rowData.activate, 'false-icon pi-times-circle': !rowData.activate })}></i>
+  }
+
+  const activateRowFilterTemplate = (options) => {
+    return <TriStateCheckbox value={options.value} onChange={(e) => options.filterApplyCallback(e.value)} />
+  }
 
   return [
-    {
-      name: 'Rule',
-      selector: row => row.rule
-    },
-    {
-      name: 'Property',
-      selector: row => row.property
-    },
-    {
-      name: 'Operator',
-      selector: row => row.operator
-    },
-    {
-      name: 'Value',
-      selector: row => row.value
-    },
-    {
-      name: 'Activate',
-      selector: row => row.activate,
-      cell: (row) => (
-        <>
-          {
-            row.activate ? <ThumbsUp size={20} /> : <ThumbsDown size={20} /> 
-          }
-        </>
-      )
-    },
-    {
-      name: 'Actions',
-      cell: (row) => (
-        <>
-          <Button
-            onClick={() => editHandler(row)}
-            color="flat-danger"
-            className="btn-icon"
-            size="sm"
-            >
-            <Edit size={20} />
-          </Button>
-
-          <Button
-            onClick={() => deleteHandler(row.id)}
-            color="flat-success"
-            className="btn-icon"
-            size="sm"
-          >
-            <Trash2 size={20} />
-          </Button>
-        </>
-      )
-    }
+    {field: 'rule', header: 'Rule', filter: 'filter', style: '12rem' },
+    {field: 'property', header: 'Property', filter: 'filter', style: '14rem' },
+    {field: 'operator', header: 'Operator', filter: 'filter', style: '14rem' },
+    {field: 'value', header: 'Value', filter: 'filter', style: '12rem' },
+    {field: 'activate', header: 'Activate', bodyTemplate: activateTemplate, filterElement: activateRowFilterTemplate, filter: 'filter',  style: '6rem' },
+    {field: 'action', header: 'Actions', bodyTemplate: editAndDeleteTemplate,  style: '10rem'}
   ]
 }

@@ -7,11 +7,6 @@ import { editRule } from '../../redux/rules'
 import * as Yup from 'yup'
 import Inputs from './Inputs'
 
-const RadioOptions = [
-  {key: 'Refund', value: 'Refund'},
-  {key: 'RefundRequest', value: 'RefundRequest'}
-]
-
 const Edit = ({rule = {}}) => {
   const dispatch = useDispatch()
 
@@ -34,7 +29,6 @@ const Edit = ({rule = {}}) => {
   })
 
   const onSubmit = (values) => {
-    console.log({id: rule.id, ...values}, rule, values)
     dispatch(editRule({id: rule.id, ...values}))
   }
 

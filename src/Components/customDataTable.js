@@ -1,23 +1,29 @@
 import React from 'react'
-import DataTable from 'react-data-table-component'
-import { Spinner } from 'reactstrap'
+import { DataTable } from 'primereact/datatable'
+import { InputText } from 'primereact/inputtext'
+import { Column } from 'primereact/column'
+import 'primeicons/primeicons.css'
+import 'primereact/resources/themes/lara-light-indigo/theme.css'
+import 'primereact/resources/primereact.css'
 
 const CustomDataTable = (prop) => {
   const {columns, data, ...rest} = prop
+
   return (
-    <> 
-      <DataTable
-        columns={columns}
-        data={data}
-        progressComponent={
-          <div className="py-3">
-            <Spinner color="primary" />
-          </div>
-        }
-        style={{ cursor: "pointer" }}
-        {...rest}
-      />
-    </>
+    <DataTable value={data} {...rest}>
+      {columns.map((col) => (
+        <Column 
+          key={col.field} 
+          field={col.field} 
+          filter={col.filter} 
+          filterPlaceholder={`Search by ${col.field}`} 
+          body={col.bodyTemplate} 
+          header={col.header}
+          style={{ minWidth: col.style }}
+          filterElement={col.filterElement}
+        />
+      ))}
+    </DataTable>
   )
 }
 

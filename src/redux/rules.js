@@ -28,7 +28,7 @@ export const getRule = createAsyncThunk("rules/get", async () => {
 export const ruleSlice = createSlice({
   name: "rule",
   initialState: {
-    Rule: [],
+    rules: [],
     error: false,
     loading: false
   },
@@ -39,22 +39,22 @@ export const ruleSlice = createSlice({
     builder
     .addCase(addRule.fulfilled,  (state, action) => {
       state.loading = false
-      state.Rule.push(action.payload)
+      state.rules.push(action.payload)
     })
     .addCase(getRule.fulfilled, (state, action) => {
       state.loading = false
-      state.Rule = action.payload
+      state.rules = action.payload
     })
     .addCase(editRule.fulfilled, (state, action) => {
       state.loading = false
-      const index = state.Rule.findIndex((rule) => rule.id === action.payload.id)
+      const index = state.rules.findIndex((rule) => rule.id === action.payload.id)
       if (index > -1) {
-        state.Rule[index] = action.payload
+        state.rules[index] = action.payload
       }
     })
     .addCase(deleteRule.fulfilled, (state, action) => {
       state.loading = false
-      state.Rule = state.Rule.filter(rule => rule.id !== action.payload)
+      state.rules = state.rules.filter(rule => rule.id !== action.payload)
     })
   }
 })
