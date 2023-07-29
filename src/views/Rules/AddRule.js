@@ -34,7 +34,9 @@ const AddRule = () => {
 
   const onSubmit = (values, {resetForm}) => {
     dispatch(addRule(values))
-    resetForm()
+    setTimeout(() => {
+      resetForm()
+    }, 0)
   }
 
   return (
@@ -48,7 +50,6 @@ const AddRule = () => {
           validationSchema={validationSchema}
         >
           {({values}) => {
-            console.log(values)
             return (
               <Form>
                 <Row className='flex-column'>

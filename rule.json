@@ -63,6 +63,22 @@
       "operator": "Not Contains",
       "value": "Bullying",
       "activate": true
+    },
+    {
+      "id": 10,
+      "rule": "Refund",
+      "property": "Integer",
+      "operator": "Greater than",
+      "value": "2000",
+      "activate": true
+    },
+    {
+      "id": 11,
+      "rule": "Refund",
+      "property": "Integer",
+      "operator": "Greater than",
+      "value": "2000",
+      "activate": true
     }
   ]
 }
