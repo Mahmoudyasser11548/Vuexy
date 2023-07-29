@@ -1,3 +1,4 @@
+import React from 'react'
 import { classNames } from "primereact/utils"
 import { Edit2, Trash2 } from "react-feather"
 import { Button } from "reactstrap"

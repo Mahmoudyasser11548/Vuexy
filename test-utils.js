@@ -6,10 +6,10 @@ import { ThemeContext } from './src/utility/context/ThemeColors'
 // As a basic setup, import your same slice reducers
 import navbar from './src/redux/navbar'
 import layout from './src/redux/layout'
-import rules from './src/redux/rules'
+import rule from './src/redux/rules'
 import { BrowserRouter } from "react-router-dom"
 
-const rootReducer = { navbar, layout, rules }
+const rootReducer = { navbar, layout, rule }
 export function renderWithProviders(
     ui,
     {
