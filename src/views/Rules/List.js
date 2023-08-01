@@ -24,7 +24,7 @@ const List = () => {
   const dispatch = useDispatch()
 
   // Rule 
-  const [entity, setEntity] = useState()
+  const [entity, setEntity] = useState('')
 
   const ruleSelected = () => {
     return rules.filter((rule) => rule.rule === entity)
@@ -111,7 +111,7 @@ const List = () => {
         onChange={(e) => setEntity(e.target.value)}
       />
 
-      <CustomDataTable 
+      {entity !== '' ? <CustomDataTable 
         header={header}
         filters={filters} 
         filterDisplay="row" 
@@ -127,7 +127,7 @@ const List = () => {
         rows={5} 
         rowsPerPageOptions={[5, 10, 25, 50]}
         onSelectionChange={(e) => setSelectedRule(e.value)}
-      />
+      /> : ''}
 
       {/* Create Edit Modal */}
       <CustomModal 
