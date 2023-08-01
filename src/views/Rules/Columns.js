@@ -39,7 +39,7 @@ export const Columns = (deleteHandler, editHandler) => {
   }
 
   return [
-    {field: 'rule', header: 'Rule', filter: 'filter', style: '12rem' },
+    // {field: 'rule', header: 'Rule', filter: 'filter', style: '12rem' },
     {field: 'property', header: 'Property', filter: 'filter', style: '14rem' },
     {field: 'operator', header: 'Operator', filter: 'filter', style: '14rem' },
     {field: 'value', header: 'Value', filter: 'filter', style: '12rem' },

@@ -5,7 +5,7 @@
       "rule": "RefundRequest",
       "property": "String",
       "operator": "Equals",
-      "value": "000",
+      "value": "0000",
       "activate": true
     },
     {
@@ -78,6 +78,14 @@
       "property": "Integer",
       "operator": "Greater than",
       "value": "2000",
+      "activate": true
+    },
+    {
+      "id": 12,
+      "rule": "Refund",
+      "property": "Integer",
+      "operator": "Greater than",
+      "value": "180",
       "activate": true
     }
   ]

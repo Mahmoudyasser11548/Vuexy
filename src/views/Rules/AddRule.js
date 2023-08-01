@@ -7,17 +7,12 @@ import { addRule } from '../../redux/rules'
 import * as Yup from 'yup'
 import Inputs from './Inputs'
 
-const RadioOptions = [
-  {key: 'Refund', value: 'Refund'},
-  {key: 'RefundRequest', value: 'RefundRequest'}
-]
-
-const AddRule = () => {
+const AddRule = ({entity}) => {
   const dispatch = useDispatch()
 
   const initialValues = {
     id: '',
-    rule: '',
+    rule: entity || '',
     property: '',
     operator: '',
     value: '',
@@ -53,12 +48,7 @@ const AddRule = () => {
             return (
               <Form>
                 <Row className='flex-column'>
-                  <RadioButton 
-                    name="rule"
-                    label="Select Rule"
-                    options={RadioOptions}
-                  />
-                  {values.rule !== '' ? <Inputs values={values} /> : ''}
+                  <Inputs values={values} />
                 </Row>
               </Form>
             )

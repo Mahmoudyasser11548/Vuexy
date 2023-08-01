@@ -10,11 +10,25 @@ import { InputText } from 'primereact/inputtext'
 import { Button } from 'reactstrap'
 import { Plus } from 'react-feather'
 import AddRule from './AddRule'
+import RadioButton from '../../Components/RadioButton'
+import { Formik } from 'formik'
 
 const List = () => {
+  const RadioOptions = [
+    {key: 'Refund', value: 'Refund'},
+    {key: 'RefundRequest', value: 'RefundRequest'}
+  ]
+
   // List of Rule
   const {rules} = useSelector(state => state.rule) 
   const dispatch = useDispatch()
+
+  // Rule 
+  const [entity, setEntity] = useState()
+
+  const ruleSelected = () => {
+    return rules.filter((rule) => rule.rule === entity)
+  }
 
   // Toggle Modals states
   const [modalUpdate, setModalUpdate] = useState(false)
@@ -89,6 +103,14 @@ const List = () => {
 
   return (
     <>
+
+      <RadioButton 
+        name="rule"
+        label="Select Rule"
+        options={RadioOptions}
+        onChange={(e) => setEntity(e.target.value)}
+      />
+
       <CustomDataTable 
         header={header}
         filters={filters} 
@@ -96,7 +118,7 @@ const List = () => {
         emptyMessage="No Rules found"
         globalFilterFields={['rule', 'property', 'value', 'operator']}
         columns={Columns(deleteHandler, editHandler)}
-        data={rules}
+        data={ruleSelected()}
         dataKey="id"
         tableStyle={{ minWidth: '50rem' }}
         selectionMode="single"
@@ -123,7 +145,9 @@ const List = () => {
         title="Create Rule"
         toggle={createToggle}
         modal={modalCreate}
-        body={<AddRule />}
+        body={<AddRule 
+          entity={entity}
+        />}
         modalFooter={false}
       />
     </>
