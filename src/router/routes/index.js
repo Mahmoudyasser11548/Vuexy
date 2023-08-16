@@ -27,13 +27,9 @@ const TemplateTitle = "%s - Vuexy React Admin Template"
 const DefaultRoute = "/home"
 
 const Home = lazy(() => import("../../views/Home"))
-const SecondPage = lazy(() => import("../../views/SecondPage"))
-const Login = lazy(() => import("../../views/Login"))
-const Register = lazy(() => import("../../views/Register"))
-const ForgotPassword = lazy(() => import("../../views/ForgotPassword"))
 const Error = lazy(() => import("../../views/Error"))
-const Rules = lazy(() => import("../../views/Rules/Rules"))
-const Edit = lazy(() => import("../../views/Rules/Edit"))
+
+import spinningWheel from '../../views/SpinningWheel'
 
 // ** Merge Routes
 const Routes = [
@@ -47,41 +43,13 @@ const Routes = [
     element: <Home />
   },
   {
-    path: "/second-page",
-    element: <SecondPage />
-  },
-  {
-    path: "/rules",
-    element: <Rules />
-  },
-  {
-    path: "/login",
-    element: <Login />,
-    meta: {
-      layout: "blank"
-    }
-  },
-  {
-    path: "/register",
-    element: <Register />,
-    meta: {
-      layout: "blank"
-    }
-  },
-  {
-    path: "/forgot-password",
-    element: <ForgotPassword />,
-    meta: {
-      layout: "blank"
-    }
-  },
-  {
     path: "/error",
     element: <Error />,
     meta: {
       layout: "blank"
     }
-  }
+  },
+  ...spinningWheel
 ]
 
 const getRouteMeta = (route) => {

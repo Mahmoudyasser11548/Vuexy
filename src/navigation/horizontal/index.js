@@ -1,22 +1,10 @@
-import { Mail, Home, List } from "react-feather"
+import { Aperture } from "react-feather"
 import React from "react"
 export default [
   {
-    id: "home",
-    title: "Home",
-    icon: <Home size={20} />,
-    navLink: "/home"
-  },
-  {
-    id: "secondPage",
-    title: "Second Page",
-    icon: <Mail size={20} />,
-    navLink: "/second-page"
-  },
-  {
-    id: "rules",
-    title: "Rules",
-    icon: <List size={20} />,
-    navLink: "/rules"
+    id: "spinningWheel",
+    title: "Spin Wheel",
+    icon: <Aperture size={20} />,
+    navLink: "/spinningWheel/list"
   }
 ]

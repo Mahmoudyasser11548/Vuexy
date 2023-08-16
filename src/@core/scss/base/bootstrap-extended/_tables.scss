@@ -7,6 +7,23 @@
 //     Author URL: http://www.themeforest.net/user/pixinvent
 // ================================================================================================
 
+// primeReact
+.p-datatable {
+  .p-datatable-header {
+    background: transparent !important;
+    border: none !important;
+    padding: 0.6rem !important;
+  }
+  .p-datatable-tbody {
+    > tr {
+      background: #ffffff;
+      > td {
+        padding: 0.6rem !important;
+      }
+    }
+  }
+}
+
 // table-white-space
 .table-white-space {
   th,
