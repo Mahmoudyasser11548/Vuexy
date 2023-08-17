@@ -31,10 +31,10 @@ const IntlDropdown = () => {
       <DropdownToggle href='/' tag='a' className='nav-link' onClick={e => e.preventDefault()}>
         <ReactCountryFlag
           className='country-flag flag-icon'
-          countryCode={locales.ar.code }
+          countryCode={locales.en.code }
           svg
         />
-        <span className='selected-language'>{langObj.ar.name}</span>
+        <span className='selected-language'>{langObj.en.name}</span>
       </DropdownToggle>
       <DropdownMenu className='mt-0' end>
         {locales && Object.keys(locales).map((key, i) => {

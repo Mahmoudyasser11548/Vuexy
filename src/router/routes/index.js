@@ -30,6 +30,7 @@ const Home = lazy(() => import("../../views/Home"))
 const Error = lazy(() => import("../../views/Error"))
 
 import spinningWheel from '../../views/SpinningWheel'
+import SpinWheelConfigs from '../../views/SpinWheelConfigs'
 
 // ** Merge Routes
 const Routes = [
@@ -49,7 +50,8 @@ const Routes = [
       layout: "blank"
     }
   },
-  ...spinningWheel
+  ...spinningWheel,
+  ...SpinWheelConfigs
 ]
 
 const getRouteMeta = (route) => {

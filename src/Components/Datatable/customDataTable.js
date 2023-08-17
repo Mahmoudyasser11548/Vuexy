@@ -4,18 +4,34 @@ import { Column } from 'primereact/column'
 import 'primeicons/primeicons.css'
 import 'primereact/resources/themes/lara-light-indigo/theme.css'
 import 'primereact/resources/primereact.css'
+import {FilterMatchMode} from 'primereact/api'
 import { InputText } from 'primereact/inputtext'
 
-const CustomDataTable = (prop) => {
-  const {columns, data, headerSearch = true, filters, setFilters, ...rest} = prop
+const CustomDataTable = (props) => {
+  const {
+    columns, 
+    data, 
+    headerSearch = true, 
+    filterFieldsSet, 
+    filterDisplay = false, 
+    ...rest
+  } = props
 
-  const [globalFilterValue, setGlobalFilterValue] = useState()
+  // Filter Configration
+  const [filters, setFilters] = useState({
+    global: { value: null, matchMode: FilterMatchMode.CONTAINS },
+    ...filterFieldsSet
+  })
+  
+  const [globalFilterValue, setGlobalFilterValue] = useState('')
 
   // Global Filteration Function in Input Field at Table Header
   const onGlobalFilterChange = (e) => {
     const value = e.target.value
     const _filters = { ...filters }
     
+    console.log(filters)
+
     _filters['global'].value = value
 
     setFilters(_filters)
@@ -44,6 +60,9 @@ const CustomDataTable = (prop) => {
     <DataTable 
       header={headerSearch ? header : ''}
       value={data} 
+      filters={filters} 
+      filterDisplay={filterDisplay ? 'row' : ''}
+      paginator
       {...rest}>
       {columns.map((col) => (
         <Column 
