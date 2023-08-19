@@ -5988,6 +5988,11 @@ react-country-flag@^3.0.2:
   resolved "https://registry.npmjs.org/react-country-flag/-/react-country-flag-3.1.0.tgz"
   integrity sha512-JWQFw1efdv9sTC+TGQvTKXQg1NKbDU2mBiAiRWcKM9F1sK+/zjhP2yGmm8YDddWyZdXVkR8Md47rPMJmo4YO5g==
 
+react-custom-roulette@^1.4.1:
+  version "1.4.1"
+  resolved "https://registry.npmjs.org/react-custom-roulette/-/react-custom-roulette-1.4.1.tgz"
+  integrity sha512-v5Mrww/lbysSNcAF0PHU7KzdY+ljtTysu6A5Hx5s0Fi2V7CIj36Q2Df+l/1izl8yzX06nnQzvgbwSLenm8vYDQ==
+
 react-data-table-component@^7.5.3:
   version "7.5.3"
   resolved "https://registry.npmjs.org/react-data-table-component/-/react-data-table-component-7.5.3.tgz"
@@ -6157,6 +6162,11 @@ react-resize-detector@^8.0.4:
   integrity sha512-S7szxlaIuiy5UqLhLL1KY3aoyGHbZzsTpYal9eYMwCyKqoqoVLCmIgAgNyIM1FhnP2KyBygASJxdhejrzjMb+w==
   dependencies:
     lodash "^4.17.21"
+
+react-roulette-pro@^3.1.1:
+  version "3.1.1"
+  resolved "https://registry.npmjs.org/react-roulette-pro/-/react-roulette-pro-3.1.1.tgz"
+  integrity sha512-GXTkM/s4nzqT7abRaYgYGeAIB6uE2td7egj6+/ped5vtdy5yxgJLK4O8x7SnyyqYwHewferE7P8oV9jhvsr7dA==
 
 react-router-dom@^6.3.0:
   version "6.10.0"

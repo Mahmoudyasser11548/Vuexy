@@ -11,7 +11,8 @@ import { Plus } from 'react-feather'
 import { Columns } from './RewardsColumns'
 import CustomDataTable from '../../Components/Datatable/customDataTable'
 import { FilterMatchMode } from 'primereact/api'
-
+import CustomModal from '../../Components/shared/CustomModal'
+import useFile from '../../utility/hooks/useFile'
 const data = [
   {
     id: 1,
@@ -44,7 +45,22 @@ const data = [
 
 const Rewards = () => {
   const [selectedReward, setSelectedReward] = useState()
+  const [modalDelete, setModalDelete] = useState(false)
+  const [modalQuantities, setModalQuantities] = useState(false)
 
+  // Toggle Modals functions
+  const deleteToggle = () => setModalDelete(!modalDelete)
+  const quantityToggle = () => setModalQuantities(!modalQuantities)
+
+  // handlers 
+  const deleteHandler = () => {
+    deleteToggle()
+  }
+
+  const editHandler = () => {}
+
+
+  // Filter Table
   const filterFieldsSet = {
     name: { value: null, matchMode: FilterMatchMode.CONTAINS },
     quantity: { value: null, matchMode: FilterMatchMode.CONTAINS },
@@ -53,6 +69,7 @@ const Rewards = () => {
     win: { value: null, matchMode: FilterMatchMode.EQUALS }
   }
 
+  // Formik Values
   const initialValues = () => {
     return {
       id: "",
@@ -77,7 +94,7 @@ const Rewards = () => {
   return (
     <>
       <Formik
-        initialValues={initialValues}
+        initialValues={initialValues()}
         validationSchema={validationSchema}
         onSubmit={onSubmit}
         enableReinitialize={true}
@@ -166,6 +183,7 @@ const Rewards = () => {
         <Button
           className="m-1"
           color="primary"
+          onClick={() => quantityToggle()}
         >
           reset_quantities
         </Button>
@@ -177,7 +195,7 @@ const Rewards = () => {
         filterDisplay={true} 
         filterFieldsSet={filterFieldsSet}
         globalFilterFields={['name', 'quantity', 'remainning', 'consumed']}
-        columns={Columns()}
+        columns={Columns(deleteHandler, editHandler)}
         data={data}
         selectionMode='single'
         selection={selectedReward} 
@@ -187,6 +205,30 @@ const Rewards = () => {
         emptyMessage="No Rewards found"
         tableStyle={{ minWidth: '50rem' }}
       /> 
+      <CustomModal
+        title={'Delete Reward'}
+        toggle={deleteToggle}
+        modal={modalDelete}
+        body={
+          <h3>
+            are_you_sure_you_want_to_delete?
+          </h3>
+        }
+        cancelTitle={'No'}
+        confirmTitle={'Yes'}
+      />
+      <CustomModal
+        title={'Delete Reward'}
+        toggle={quantityToggle}
+        modal={modalQuantities}
+        body={
+          <h3>
+            are_you_sure_you_want_to_reset_quantities?
+          </h3>
+        }
+        cancelTitle={'No'}
+        confirmTitle={'Yes'}
+      />
     </>
   )
 }

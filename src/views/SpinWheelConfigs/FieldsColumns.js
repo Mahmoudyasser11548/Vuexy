@@ -2,7 +2,7 @@ import { classNames } from "primereact/utils"
 import { Trash2 } from "react-feather"
 import { Button } from "reactstrap"
 
-export const Columns = () => {
+export const Columns = (deleteHandler) => {
 
   const DeleteTemplate = () => {
     return (
@@ -11,7 +11,8 @@ export const Columns = () => {
           color="flat-danger"
           className="btn-icon"
           size="sm"
-          >
+          onClick={() => deleteHandler()}
+        >
           <Trash2 id="Field" size={20} />
         </Button>
       </>

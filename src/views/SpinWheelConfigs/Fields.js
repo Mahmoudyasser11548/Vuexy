@@ -8,6 +8,7 @@ import SwitchField from '../../Components/form/SwitchField'
 import CustomDataTable from '../../Components/Datatable/customDataTable'
 import { Plus } from 'react-feather'
 import { Columns } from './FieldsColumns'
+import CustomModal from '../../Components/shared/CustomModal'
 
 const data = [
   {
@@ -29,7 +30,17 @@ const data = [
 
 const Fields = () => {
   const [selectedField, setSelectedField] = useState()
+  const [modalDelete, setModalDelete] = useState(false)
 
+  // Toggle Modals functions
+  const deleteToggle = () => setModalDelete(!modalDelete)
+
+  // handlers 
+  const deleteHandler = () => {
+    deleteToggle()
+  }
+
+  // Formik values
   const initialValues = () => {
     return {
       id: "",
@@ -98,7 +109,7 @@ const Fields = () => {
         headerSearch={true}
         filterDisplay={false} 
         globalFilterFields={['name']}
-        columns={Columns()}
+        columns={Columns(deleteHandler)}
         data={data}
         selectionMode='single'
         selection={selectedField} 
@@ -108,6 +119,18 @@ const Fields = () => {
         emptyMessage="No Fields found"
         tableStyle={{ minWidth: '50rem' }}
       /> 
+      <CustomModal
+        title={'Delete Field'}
+        toggle={deleteToggle}
+        modal={modalDelete}
+        body={
+          <h3>
+            are_you_sure_you_want_to_delete?
+          </h3>
+        }
+        cancelTitle={'No'}
+        confirmTitle={'Yes'}
+      />
     </>
   )
 }

@@ -1,12 +1,10 @@
 import React from 'react'
-// import { classNames } from "primereact/utils"
 import { Book, Edit2, Gift, Trash2 } from "react-feather"
 import { Button } from "reactstrap"
-import { TriStateCheckbox } from 'primereact/tristatecheckbox'
 
-export const Columns = () => {
+export const Columns = (deleteHandler, downloadHandler, editHandler) => {
   
-  const editAndDeleteTemplate = () => {
+  const editAndDeleteTemplate = (rowData) => {
     return (
       <>
         
@@ -14,7 +12,8 @@ export const Columns = () => {
           color="flat-warning"
           className="btn-icon"
           size="sm"
-          >
+          onClick={() => window.open(`displayed-rewards/${rowData?.id}`, "_blank").focus()}
+        >
           <Gift id="wheel" size={20} />
         </Button>
   
@@ -22,6 +21,7 @@ export const Columns = () => {
           color="flat-warning"
           className="btn-icon"
           size="sm"
+          onClick={() => window.open(`displayed-wheel/${rowData?.id}`, "_blank").focus()}
         >
           <Book id="wheel" size={20} />
         </Button>
@@ -30,7 +30,8 @@ export const Columns = () => {
           color="flat-primary"
           className="btn-icon"
           size="sm"
-          >
+          onClick={() => editHandler()}
+        >
           <Edit2 size={20} />
         </Button>
   
@@ -38,20 +39,13 @@ export const Columns = () => {
           color="flat-danger"
           className="btn-icon"
           size="sm"
+          onClick={() => deleteHandler()}
         >
           <Trash2 size={20} />
         </Button>
       </>
     )
   }
-
-  // const activateTemplate = (rowData) => {
-  //   return <i className={classNames('pi', { 'true-icon pi-check-circle': rowData.activate, 'false-icon pi-times-circle': !rowData.activate })}></i>
-  // }
-
-  // const activateRowFilterTemplate = (options) => {
-  //   return <TriStateCheckbox value={options.value} onChange={(e) => options.filterApplyCallback(e.value)} />
-  // }
 
   return [
     {field: 'name', header: 'Name', style: '22rem', sortable: true},

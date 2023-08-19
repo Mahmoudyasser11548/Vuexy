@@ -6,6 +6,7 @@ import CustomDataTable from '../../Components/Datatable/customDataTable'
 import { Columns } from './Columns'
 import {FilterMatchMode} from 'primereact/api'
 import { useNavigate } from 'react-router-dom'
+import CustomModal from '../../Components/shared/CustomModal'
 
 const data = [
   {
@@ -27,7 +28,22 @@ const data = [
 
 const List = () => {
   const navigate = useNavigate()
-  const [selectedSpin, setSelectedSpin] = useState()
+  const [selectedSpin, setSelectedSpin] = useState({})
+  const [modalToggle, setModalToggle] = useState(false)
+
+  // Toggle Modals functions
+  const toggle = () => setModalToggle(!modalToggle)
+
+  // handlers 
+  const deleteHandler = () => {
+    toggle()
+  }
+
+  const downloadHandler = () => {
+    toggle()
+  }
+
+  const editHandler = () => {}
 
   const filterFieldsSet = {
     name: { value: null, matchMode: FilterMatchMode.CONTAINS },
@@ -60,7 +76,7 @@ const List = () => {
             filterFieldsSet={filterFieldsSet}
             filterDisplay={false} 
             globalFilterFields={['name', 'tenant']}
-            columns={Columns()}
+            columns={Columns(deleteHandler, downloadHandler, editHandler)}
             data={data}
             selectionMode='single'
             selection={selectedSpin} 
@@ -70,6 +86,18 @@ const List = () => {
             emptyMessage="No Spinning wheels found"
             tableStyle={{ minWidth: '50rem' }}
           /> 
+          <CustomModal
+            title={'Delete Spin'}
+            toggle={toggle}
+            modal={modalToggle}
+            body={
+              <h3>
+                are_you_sure_you_want_to_delete?
+              </h3>
+            }
+            cancelTitle={'No'}
+            confirmTitle={'Yes'}
+          />
         </>
       }
     />

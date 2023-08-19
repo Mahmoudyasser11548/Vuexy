@@ -12,9 +12,8 @@ function SelectField({
   ...props
 }) {
   // const { locale } = useLanguage()
-  const [field, meta, helpers] = useField(props)
+  const [field, meta, helpers] = useField(props.name)
   const { touched, error } = meta
-  const { ...fieldProps } = field
 
   const selectedObj =
     options &&
@@ -67,7 +66,7 @@ function SelectField({
           }}
           {...props}
           classNamePrefix="select"
-          {...fieldProps}
+          {...field}
         />
         {error && touched && <FormFeedback>{error}</FormFeedback>}
       </FormGroup>

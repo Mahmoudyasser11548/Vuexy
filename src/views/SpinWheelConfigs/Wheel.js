@@ -40,13 +40,11 @@ const Wheel = () => {
     topHeader: yup.string().required(),
     bottomHeader: yup.string().required(),
     buttonText: yup.string().required(),
-    type: yup.string().required(),
-    logo: yup.string().required(),
-    circleImg: yup.string().required()
+    type: yup.string().required()
   })
 
-  const onSubmit = (e) => {
-    e.preventDefault()
+  const onSubmit = (values) => {
+    console.log(values)
   }
 
   return (

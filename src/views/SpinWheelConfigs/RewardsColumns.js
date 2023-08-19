@@ -4,7 +4,7 @@ import { Edit2, FolderPlus, Trash2 } from "react-feather"
 import { Button } from "reactstrap"
 import { TriStateCheckbox } from 'primereact/tristatecheckbox'
 import Avatar from '../../Components/shared/Avatar'
-export const Columns = () => {
+export const Columns = (deleteHandler) => {
 
   const editAndDeleteTemplate = () => {
     return (
@@ -21,6 +21,7 @@ export const Columns = () => {
           color="flat-primary"
           className="btn-icon"
           size="sm"
+          onClick={() => editHandler()}
           >
           <Edit2 size={20} />
         </Button>
@@ -29,6 +30,7 @@ export const Columns = () => {
           color="flat-danger"
           className="btn-icon"
           size="sm"
+          onClick={() => deleteHandler()}
         >
           <Trash2 size={20} />
         </Button>

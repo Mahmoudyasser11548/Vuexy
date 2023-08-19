@@ -109,6 +109,100 @@ body {
 }
 
 // *********************************
+.circle {
+  background-color: #fff;
+  width: 30px;
+  height: 30px;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  border-radius: 50%;
+}
+
+img[alt~="roulette-static"] { 
+  transform: rotate(140deg);
+  content: url("../images/arr1.png");
+}
+
+.wheel-container {
+  position: relative;
+  border-radius: 50%;
+  width: 250px;
+  height: 250px;
+
+  &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-radius: 50%;
+      width: 100%;
+      height: 100%;
+      background-color: #000;
+  }
+
+  > div:last-child {
+      height: 100%;
+      width: 100%;
+      max-height: unset;
+      max-width: unset;
+  }    
+}
+
+.roulette-pro-spin {
+  position: relative;
+  max-width: 800px;
+  margin: auto !important;
+  .roulette-pro-wrapper {
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 2;
+    margin: 0;
+    color: #fff;
+    overflow: hidden;
+    height: 100%;
+    padding: 33px 0 82px;
+    background: rgba(0, 0, 0, 0.6);
+    min-height: 265px;
+    border-radius: 10px;
+  }
+  .roulette-actions {
+    position: relative;
+    bottom: 50px;
+    z-index: 3;
+    text-align: center;
+    min-height: 160px;
+    overflow: hidden;
+    .gray-block {
+      background: #202020;
+      max-width: 398px;
+      border-radius: 38px;
+      padding: 18px 13px;
+      margin: 0 auto;
+      min-height: 70px;
+      box-sizing: border-box;
+      color: #000;
+  
+      .btn-wheel {
+        position: relative;
+        z-index: 2;
+        width: 300px;
+        font-size: 21px;
+        border-radius: 41px;
+        padding: 24px 35px;
+        transition: all 0.3s ease-out;
+        background: linear-gradient(to bottom, #ffc12f 0%, #ffe324 50%, #ffc12f 100%);
+        text-transform: uppercase;
+        font-weight: 700;
+        cursor: pointer;
+        outline: none;
+        border: none;
+      }
+    }
+  }
+}
+
+// *********************************
 #wheelOfFortune {
   display: inline-block;
   position: relative;
@@ -200,9 +294,11 @@ body {
   height: 14%;
 }
 .spin-btn {
-  margin-top: 1rem;
+  width: 200px;
+  margin: 1rem auto 0;
   font-weight: 600;
-  font-size: 2rem;
+  font-size: 2rem !important;
+  text-transform: uppercase !important;
   cursor: pointer;
   color: #094529;
   text-transform: lowercase;
@@ -383,7 +479,6 @@ $scib-green: #094529;
   padding: 2px 16px;
   height: 320px;
 }
-
 /* Add rounded corners to the top left and the top right corner of the image */
 .custom-img {
   width: 100%;
