@@ -9,6 +9,7 @@ import CustomDataTable from '../../Components/Datatable/customDataTable'
 import { Plus } from 'react-feather'
 import { Columns } from './FieldsColumns'
 import CustomModal from '../../Components/shared/CustomModal'
+import { Trans } from '@lingui/react'
 
 const data = [
   {
@@ -76,10 +77,10 @@ const Fields = () => {
 
                       <Row>
                         <Col md='8'>
-                          <InputField name="name" label="name" />
+                          <InputField name="name" label={<Trans id="name" />} />
                         </Col>
                         <Col md='8'>
-                          <SwitchField name="isRequired" label="isRequired" />
+                          <SwitchField name="isRequired" label={<Trans id="isRequired" />} />
                         </Col>
                       </Row>
 
@@ -93,7 +94,7 @@ const Fields = () => {
                         outline
                       >
                         <Plus size={14} />
-                        <span>{"confirm"}</span>
+                        <span><Trans id="Confirm" /></span>
                       </Button>
                     </Col>
                   </Row>
@@ -116,7 +117,7 @@ const Fields = () => {
         onSelectionChange={(e) => setSelectedField(e.value)}
         rows={5} 
         rowsPerPageOptions={[5, 10, 25, 50]}
-        emptyMessage="No Fields found"
+        emptyMessage={<Trans id="No Fields found" />}
         tableStyle={{ minWidth: '50rem' }}
       /> 
       <CustomModal
@@ -125,11 +126,11 @@ const Fields = () => {
         modal={modalDelete}
         body={
           <h3>
-            are_you_sure_you_want_to_delete?
+            <Trans id="are_you_sure_you_want_to_delete" />
           </h3>
         }
-        cancelTitle={'No'}
-        confirmTitle={'Yes'}
+        cancelTitle={<Trans id='No' />}
+        confirmTitle={<Trans id='Yes' />}
       />
     </>
   )

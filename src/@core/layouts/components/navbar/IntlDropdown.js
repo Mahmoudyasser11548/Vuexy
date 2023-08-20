@@ -1,30 +1,30 @@
 // ** Third Party Components
-import { useTranslation } from "react-i18next";
-import ReactCountryFlag from "react-country-flag";
+import { useTranslation } from "react-i18next"
+import ReactCountryFlag from "react-country-flag"
 
 // ** Reactstrap Imports
 import {
   UncontrolledDropdown,
   DropdownMenu,
   DropdownItem,
-  DropdownToggle,
-} from "reactstrap";
+  DropdownToggle
+} from "reactstrap"
 
 import { locales } from '../../../../redux/SupportedLocales'
 
 
 const IntlDropdown = () => {
   // ** Hooks
-  const { i18n } = useTranslation();
+  const { i18n } = useTranslation()
 
   // ** Vars
   const langObj = locales
 
   // ** Function to switch Language
   const handleLangUpdate = (e, lang) => {
-    e.preventDefault();
-    i18n.changeLanguage(lang);
-  };
+    e.preventDefault()
+    i18n.changeLanguage(lang)
+  }
 
   return (
     <UncontrolledDropdown href='/' tag='li' className='dropdown-language nav-item'>
@@ -41,12 +41,12 @@ const IntlDropdown = () => {
           return (
           <DropdownItem key={i} href='/' tag='a' onClick={e => handleLangUpdate(e, locales[key])}>
             <ReactCountryFlag className='country-flag' countryCode={locales[key].flag} svg />
-            <span className='ml-1'>{locales[key].name}</span>
+            <span className='ml-1 ms-1'>{locales[key].name}</span>
           </DropdownItem>
         )})}
       </DropdownMenu>
     </UncontrolledDropdown>
-  );
-};
+  )
+}
 
-export default IntlDropdown;
+export default IntlDropdown

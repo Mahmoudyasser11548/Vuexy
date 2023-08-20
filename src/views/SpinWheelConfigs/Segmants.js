@@ -10,6 +10,7 @@ import { Plus } from 'react-feather'
 import { Columns } from './SegmantsColumns'
 import { FilterMatchMode } from 'primereact/api'
 import CustomDataTable from '../../Components/Datatable/customDataTable'
+import { Trans } from '@lingui/react'
 
 const data = [
   {
@@ -86,7 +87,7 @@ const Segmants = () => {
                     <Row>
 
                       <Col>
-                        <InputField name="label" label="title" />
+                        <InputField name="label" label={<Trans id="title" />} />
                       </Col>
 
                       <Col>
@@ -94,7 +95,7 @@ const Segmants = () => {
                           name="rewardId"
                           keyValue={"id"}
                           title={"label"}
-                          label={"reward"}
+                          label={<Trans id="reward" />}
                           options={[
                             {id: 'prize1', label: 'Prize1'},
                             {id: 'prize2', label: 'Prize2'},
@@ -107,7 +108,7 @@ const Segmants = () => {
                         <InputField
                           name="color"
                           type="color"
-                          label="color"
+                          label={<Trans id="color" />}
                         />
                       </Col>
 
@@ -115,7 +116,7 @@ const Segmants = () => {
                         <InputField
                           name="textColor"
                           type="color"
-                          label="textColor"
+                          label={<Trans id="textColor" />}
                         />
                       </Col>
                     </Row>
@@ -128,7 +129,7 @@ const Segmants = () => {
                           outline
                         >
                           <Plus size={14} />
-                          <span>confirm</span>
+                          <span>{<Trans id="confirm" />}</span>
                         </Button>
                       </Col>
                     </Row>
@@ -152,16 +153,16 @@ const Segmants = () => {
         onSelectionChange={(e) => setSelectedSegmant(e.value)}
         rows={5} 
         rowsPerPageOptions={[5, 10, 25, 50]}
-        emptyMessage="No Segmants found"
+        emptyMessage={<Trans id="No Segmants found" />}
         tableStyle={{ minWidth: '50rem' }}
       /> 
       <CustomModal
-        title={"delete segment"}
+        title={<Trans id="delete segment" />}
         toggle={deleteToggle}
         modal={modalDelete}
-        confirmTitle='Yes'
-        cancelTitle='No'
-        body={<h3>are_you_sure_you_want_to_delete seg?</h3>}
+        confirmTitle={<Trans id='Yes' />}
+        cancelTitle={<Trans id='No' />}
+        body={<h3>{<Trans id='are_you_sure_you_want_to_delete seg?' />}</h3>}
       />
     </>
   )

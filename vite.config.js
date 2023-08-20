@@ -1,27 +1,33 @@
 import fs from 'fs'
 import * as path from 'path'
-import { defineConfig,splitVendorChunkPlugin } from 'vite'
+import { defineConfig, splitVendorChunkPlugin } from 'vite'
 import react from '@vitejs/plugin-react'
 import rollupNodePolyFill from 'rollup-plugin-node-polyfills'
 import NodeGlobalsPolyfillPlugin from '@esbuild-plugins/node-globals-polyfill'
-import federation from "@originjs/vite-plugin-federation";
+import federation from "@originjs/vite-plugin-federation"
+import { lingui } from "@lingui/vite-plugin"
 
 export default () => {
   return defineConfig({
     plugins: [
-      react(),
+      react({
+        babel: {
+          plugins: ["macros"]
+        }
+      }),
+      lingui(),
       splitVendorChunkPlugin(),
       federation({
         options: {
           workspaceRoot: __dirname,
-          outputPath: 'dist',
+          outputPath: 'dist'
         },
         name: 'hostapp',
         filename: "remoteEntry.js",
         remotes: {
           // remoteapp: 'http://localhost:5002/assets/remoteEntry.js',
         },
-        shared: ['react', 'react-dom', 'react-router-dom'],
+        shared: ['react', 'react-dom', 'react-router-dom']
       })
     ],
     define: {

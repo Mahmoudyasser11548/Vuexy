@@ -14,6 +14,7 @@
     "@fullcalendar/timegrid": "^5.11.0",
     "@fullcalendar/timeline": "^5.11.0",
     "@hookform/resolvers": "^2.8.10",
+    "@lingui/react": "^4.4.0",
     "@popperjs/core": "^2.11.3",
     "@reduxjs/toolkit": "^1.2.5",
     "animate.css": "4.1.1",
@@ -104,10 +105,18 @@
     "format": "prettier --write \"src/**/*.js\"",
     "lint": "eslint src/**/*.js src/**/*.js",
     "lint:fix": "eslint src/**/*.js --fix",
-    "test": "jest"
+    "test": "jest",
+    "extract": "lingui extract",
+    "compile": "lingui compile"
   },
   "eslintConfig": {
     "extends": "react-app"
+  },
+  "lingui": {
+    "localeDir": "src/locales",
+    "format": "po",
+    "fallbackLocale": "en",
+    "sourceLocale": "en"
   },
   "resolutions": {
     "sass-loader/webpack": "^5.0.0",
@@ -148,6 +157,10 @@
     "@babel/eslint-parser": "^7.18.2",
     "@babel/preset-env": "^7.22.5",
     "@babel/preset-react": "^7.22.5",
+    "@lingui/cli": "^4.4.0",
+    "@lingui/loader": "^4.4.0",
+    "@lingui/macro": "^4.4.0",
+    "@lingui/vite-plugin": "^4.4.0",
     "@originjs/vite-plugin-federation": "^1.2.2",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",
@@ -155,6 +168,7 @@
     "@types/sortablejs": "^1.10.6",
     "@vitejs/plugin-react": "2.2.0",
     "babel-jest": "^29.5.0",
+    "babel-plugin-macros": "^3.1.0",
     "eslint": "^8.19.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-react": "^7.29.4",

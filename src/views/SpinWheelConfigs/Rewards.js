@@ -13,6 +13,7 @@ import CustomDataTable from '../../Components/Datatable/customDataTable'
 import { FilterMatchMode } from 'primereact/api'
 import CustomModal from '../../Components/shared/CustomModal'
 import useFile from '../../utility/hooks/useFile'
+import { Trans, useLingui } from '@lingui/react'
 const data = [
   {
     id: 1,
@@ -47,6 +48,7 @@ const Rewards = () => {
   const [selectedReward, setSelectedReward] = useState()
   const [modalDelete, setModalDelete] = useState(false)
   const [modalQuantities, setModalQuantities] = useState(false)
+  const { i18n } = useLingui()
 
   // Toggle Modals functions
   const deleteToggle = () => setModalDelete(!modalDelete)
@@ -111,28 +113,28 @@ const Rewards = () => {
                         <Row>
                           <Col md="5">
                             <InputField
-                              name="name"
+                              name={i18n._("name")}
                               placeholder="name"
                             />
                           </Col>
 
                           <Col md="5">
                             <InputField
-                              name="quantity"
+                              name={i18n._("quantity")}
                               placeholder="quantity"
                             />
                           </Col>
 
                           <Col md="5">
                             <CheckboxField
-                              label="Lose"
+                              label={<Trans id="Lose" />}
                               name="lose"
                             />
                           </Col>
 
                           <Col md="5">
                             <CheckboxField
-                              label="try_again"
+                              label={<Trans id="try_again" />}
                               name="isTryAgain"
                             />
                           </Col>
@@ -161,7 +163,7 @@ const Rewards = () => {
                           outline
                         >
                           <Plus size={14} />
-                          <span>confirm</span>
+                          <span><Trans id='Confirm' /></span>
                         </Button>
                       </Col>
                     </Row>
@@ -185,7 +187,7 @@ const Rewards = () => {
           color="primary"
           onClick={() => quantityToggle()}
         >
-          reset_quantities
+          <Trans id='reset_quantities' />
         </Button>
       </div>
 
@@ -202,28 +204,28 @@ const Rewards = () => {
         onSelectionChange={(e) => setSelectedReward(e.value)}
         rows={5} 
         rowsPerPageOptions={[5, 10, 25, 50]}
-        emptyMessage="No Rewards found"
+        emptyMessage={<Trans id="No Rewards found" />}
         tableStyle={{ minWidth: '50rem' }}
       /> 
       <CustomModal
-        title={'Delete Reward'}
+        title={<Trans id='Delete Reward' />}
         toggle={deleteToggle}
         modal={modalDelete}
         body={
           <h3>
-            are_you_sure_you_want_to_delete?
+            <Trans id='are_you_sure_you_want_to_delete?' />
           </h3>
         }
-        cancelTitle={'No'}
-        confirmTitle={'Yes'}
+        cancelTitle={<Trans id='No' />}
+        confirmTitle={<Trans id='Yes' />}
       />
       <CustomModal
-        title={'Delete Reward'}
+        title={<Trans id='Delete Reward' />}
         toggle={quantityToggle}
         modal={modalQuantities}
         body={
           <h3>
-            are_you_sure_you_want_to_reset_quantities?
+            <Trans id="are_you_sure_you_want_to_reset_quantities" />
           </h3>
         }
         cancelTitle={'No'}

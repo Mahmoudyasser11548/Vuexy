@@ -1,0 +1,260 @@
+msgid ""
+msgstr ""
+"POT-Creation-Date: 2023-08-20 12:13+0300\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: @lingui/cli\n"
+"Language: ar\n"
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Plural-Forms: \n"
+
+#. js-lingui-explicit-id
+#: src/views/SpinWheelConfigs/Fields.js:83
+msgid "isRequired"
+msgstr "مطلوب"
+
+#. js-lingui-explicit-id
+#: src/views/SpinWheelConfigs/Fields.js:120
+msgid "No Fields found"
+msgstr "لم يتم العثور على حقول"
+
+#. js-lingui-explicit-id
+#: src/@core/layouts/components/navbar/UserDropdown.js:46
+msgid "Logout"
+msgstr "تسجيل الخروج"
+
+#. js-lingui-explicit-id
+#: src/navigation/horizontal/index.js:7
+#: src/navigation/vertical/index.js:8
+msgid "Spin Wheel"
+msgstr "عجلة الحظ"
+
+#. js-lingui-explicit-id
+#: src/views/SpinningWheel/List.js:56
+msgid "Spinning Wheels"
+msgstr "عجلات الحظ"
+
+#. js-lingui-explicit-id
+#: src/views/SpinningWheel/List.js:67
+msgid "Add Spinning Wheel"
+msgstr "أضافة عجلة حظ"
+
+#. js-lingui-explicit-id
+#: src/views/SpinningWheel/List.js:87
+#: src/views/SpinningWheel/rewards/List.js:40
+msgid "No Spinning wheels found"
+msgstr "لا يوجد عجلات حظ"
+
+#. js-lingui-explicit-id
+#: src/views/SpinningWheel/List.js:91
+msgid "delete_spinning_wheel"
+msgstr "أزالة عجلة الحظ"
+
+#. js-lingui-explicit-id
+#: src/views/SpinningWheel/List.js:96
+#: src/views/SpinWheelConfigs/Fields.js:129
+msgid "are_you_sure_you_want_to_delete"
+msgstr "هل انت متأكد من المسح"
+
+#. js-lingui-explicit-id
+#: src/views/SpinningWheel/List.js:99
+msgid "no"
+msgstr "لا"
+
+#. js-lingui-explicit-id
+#: src/views/SpinningWheel/List.js:100
+msgid "yes"
+msgstr "نعم"
+
+#. js-lingui-explicit-id
+#: src/views/SpinWheelConfigs/Fields.js:80
+#: src/views/SpinWheelConfigs/Rewards.js:116
+msgid "name"
+msgstr "الاسم"
+
+#. js-lingui-explicit-id
+#: src/views/SpinWheelConfigs/Rewards.js:123
+msgid "quantity"
+msgstr "الكمية"
+
+#. js-lingui-explicit-id
+#: src/views/SpinWheelConfigs/Rewards.js:130
+msgid "Lose"
+msgstr "خسارة"
+
+#. js-lingui-explicit-id
+#: src/views/SpinWheelConfigs/Rewards.js:137
+msgid "try_again"
+msgstr "حاول مرة اخرى"
+
+#. js-lingui-explicit-id
+#: src/views/SpinWheelConfigs/Fields.js:97
+#: src/views/SpinWheelConfigs/Rewards.js:166
+msgid "Confirm"
+msgstr "تأكيد"
+
+#. js-lingui-explicit-id
+#: src/views/SpinWheelConfigs/Rewards.js:190
+msgid "reset_quantities"
+msgstr "أعادة ضبط الكمية"
+
+#. js-lingui-explicit-id
+#: src/views/SpinWheelConfigs/Rewards.js:207
+msgid "No Rewards found"
+msgstr "لا يوجد جوائز"
+
+#. js-lingui-explicit-id
+#: src/views/SpinWheelConfigs/Rewards.js:211
+#: src/views/SpinWheelConfigs/Rewards.js:223
+msgid "Delete Reward"
+msgstr "مسح الجائزة"
+
+#. js-lingui-explicit-id
+#: src/views/SpinWheelConfigs/Rewards.js:216
+msgid "are_you_sure_you_want_to_delete?"
+msgstr "هل انت متأكد من المسح"
+
+#. js-lingui-explicit-id
+#: src/views/SpinWheelConfigs/Fields.js:132
+#: src/views/SpinWheelConfigs/Rewards.js:219
+#: src/views/SpinWheelConfigs/Segmants.js:164
+msgid "No"
+msgstr "لا"
+
+#. js-lingui-explicit-id
+#: src/views/SpinWheelConfigs/Fields.js:133
+#: src/views/SpinWheelConfigs/Rewards.js:220
+#: src/views/SpinWheelConfigs/Segmants.js:163
+msgid "Yes"
+msgstr "نعم"
+
+#. js-lingui-explicit-id
+#: src/views/SpinWheelConfigs/Rewards.js:228
+msgid "are_you_sure_you_want_to_reset_quantities"
+msgstr "هل انت متأكد من اعاده ضبط الكمية"
+
+#. js-lingui-explicit-id
+#: src/views/SpinWheelConfigs/Segmants.js:90
+msgid "title"
+msgstr "عنوان"
+
+#. js-lingui-explicit-id
+#: src/views/SpinWheelConfigs/Segmants.js:98
+msgid "reward"
+msgstr "جائزة"
+
+#. js-lingui-explicit-id
+#: src/views/SpinWheelConfigs/Segmants.js:111
+#: src/views/SpinWheelConfigs/Wheel.js:89
+msgid "color"
+msgstr "اللون"
+
+#. js-lingui-explicit-id
+#: src/views/SpinWheelConfigs/Segmants.js:119
+msgid "textColor"
+msgstr "لون النص"
+
+#. js-lingui-explicit-id
+#: src/views/SpinWheelConfigs/Segmants.js:132
+msgid "confirm"
+msgstr "تأكيد"
+
+#. js-lingui-explicit-id
+#: src/views/SpinWheelConfigs/Segmants.js:156
+msgid "No Segmants found"
+msgstr "لا يوجد خانات"
+
+#. js-lingui-explicit-id
+#: src/views/SpinWheelConfigs/Segmants.js:160
+msgid "delete segment"
+msgstr "مسح الخانة"
+
+#. js-lingui-explicit-id
+#: src/views/SpinWheelConfigs/Segmants.js:165
+msgid "are_you_sure_you_want_to_delete seg?"
+msgstr "هل انت متأكد من الخانة"
+
+#. js-lingui-explicit-id
+#: src/views/SpinWheelConfigs/Tabs.js:14
+msgid "Spinning_Wheel"
+msgstr "عجلة الحظ"
+
+#. js-lingui-explicit-id
+#: src/views/SpinWheelConfigs/Tabs.js:22
+msgid "Fields"
+msgstr "المجالات"
+
+#. js-lingui-explicit-id
+#: src/views/SpinWheelConfigs/Tabs.js:30
+msgid "Rewards"
+msgstr "الجوائز"
+
+#. js-lingui-explicit-id
+#: src/views/SpinWheelConfigs/Tabs.js:38
+msgid "Segmants"
+msgstr "الخانات"
+
+#. js-lingui-explicit-id
+#: src/views/SpinWheelConfigs/Wheel.js:71
+msgid "Name"
+msgstr "الاسم"
+
+#. js-lingui-explicit-id
+#: src/views/SpinWheelConfigs/Wheel.js:76
+msgid "expiry_date"
+msgstr "موعد الانتهاء"
+
+#. js-lingui-explicit-id
+#: src/views/SpinWheelConfigs/Wheel.js:83
+msgid "background_color"
+msgstr "لون الخلفية"
+
+#. js-lingui-explicit-id
+#: src/views/SpinWheelConfigs/Wheel.js:95
+msgid "text_color"
+msgstr "لون النص"
+
+#. js-lingui-explicit-id
+#: src/views/SpinWheelConfigs/Wheel.js:100
+msgid "top_header"
+msgstr "العنوان الاعلى"
+
+#. js-lingui-explicit-id
+#: src/views/SpinWheelConfigs/Wheel.js:105
+msgid "bottom_header"
+msgstr "العنوان السفلى"
+
+#. js-lingui-explicit-id
+#: src/views/SpinWheelConfigs/Wheel.js:110
+msgid "button_text"
+msgstr "نص الزر"
+
+#. js-lingui-explicit-id
+#: src/views/SpinWheelConfigs/Wheel.js:118
+msgid "Type"
+msgstr "النوع"
+
+#. js-lingui-explicit-id
+#: src/views/SpinWheelConfigs/Wheel.js:126
+msgid "Active"
+msgstr "نشط"
+
+#. js-lingui-explicit-id
+#: src/views/SpinWheelConfigs/Wheel.js:130
+msgid "ShowRewardsImages"
+msgstr "إظهار صور المكافآت"
+
+#. js-lingui-explicit-id
+#: src/views/SpinWheelConfigs/Wheel.js:134
+msgid "enableRegistration"
+msgstr "تمكين التسجيل"
+
+#. js-lingui-explicit-id
+#: src/views/SpinWheelConfigs/Wheel.js:162
+msgid "Save Changes"
+msgstr "حفظ التغييرات"

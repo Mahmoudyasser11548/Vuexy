@@ -10,6 +10,7 @@ import ImageField from '../../Components/form/ImageField'
 import LoadingButton from '../../Components/LoadingButton'
 import SwitchField from '../../Components/form/SwitchField'
 import useFile from "../../utility/hooks/useFile"
+import { Trans } from '@lingui/react'
 
 const Wheel = () => {
   const initialValues = () => {
@@ -67,46 +68,46 @@ const Wheel = () => {
                         <Col lg="8" sm="12">
                           <InputField
                             name="name"
-                            label={"Name"}
+                            label={<Trans id="Name" />}
                           />
 
                           <DatePickerField
                             name="expiryDate"
-                            label="expiry_date"
+                            label={<Trans id="expiry_date" />}
                             enableTime={true}
                           />
 
                           <InputField
                             name="bgColor"
                             type="color"
-                            label="background_color"
+                            label={<Trans id="background_color" />}
                           />
 
                           <InputField
                             name="color"
                             type="color"
-                            label="color"
+                            label={<Trans id="color" />}
                           />
 
                           <InputField
                             name="textColor"
                             type="color"
-                            label="text_color"
+                            label={<Trans id="text_color" />}
                           />
 
                           <InputField
                             name="topHeader"
-                            label="top_header"
+                            label={<Trans id="top_header" />}
                           />
 
                           <InputField
                             name="bottomHeader"
-                            label="bottom_header"
+                            label={<Trans id="bottom_header" />}
                           />
 
                           <InputField
                             name="buttonText"
-                            label="button_text"
+                            label={<Trans id="button_text" />}
                           />
 
                           <SelectField
@@ -114,7 +115,7 @@ const Wheel = () => {
                               { id: "spin", label: "Spin" },
                               { id: "slider", label: "Slider" }
                             ]}
-                            label={"Type"}
+                            label={<Trans id="Type" />}
                             keyValue={"id"}
                             title={"label"}
                             name="type"
@@ -122,15 +123,15 @@ const Wheel = () => {
 
                           <SwitchField 
                             name="active" 
-                            label="Active" 
+                            label={<Trans id="Active" />}
                           />
                           <SwitchField
                             name="showRewardsImages"
-                            label="ShowRewardsImages"
+                            label={<Trans id="ShowRewardsImages" />}
                           />
                           <SwitchField
                             name="isAuthorized"
-                            label="enableRegistration"
+                            label={<Trans id="enableRegistration" />}
                           />
                         </Col>
 
@@ -158,7 +159,7 @@ const Wheel = () => {
                           color="primary"
                           className="btn-primary ml-auto"
                         >
-                          Save Changes
+                          {<Trans id="Save Changes" />}
                         </LoadingButton>
                       </div>
                     </Form>

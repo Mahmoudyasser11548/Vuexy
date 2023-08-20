@@ -7,6 +7,7 @@ import { Columns } from './Columns'
 import {FilterMatchMode} from 'primereact/api'
 import { useNavigate } from 'react-router-dom'
 import CustomModal from '../../Components/shared/CustomModal'
+import { Trans } from '@lingui/react'
 
 const data = [
   {
@@ -52,7 +53,7 @@ const List = () => {
 
   return (
     <CustomCard 
-      title={'Spinning Wheels'}
+      title={<Trans id="Spinning Wheels" />}
       cardHeaderToolbar={
         <>
           <Button
@@ -63,7 +64,7 @@ const List = () => {
           >
             <Plus size={14} />
             <span className="align-middle ml-25 ms-1">
-              Add Spinning Wheel
+              <Trans id="Add Spinning Wheel" />
             </span>
           </Button>
         </>
@@ -83,20 +84,20 @@ const List = () => {
             onSelectionChange={(e) => setSelectedSpin(e.value)}
             rows={5} 
             rowsPerPageOptions={[5, 10, 25, 50]}
-            emptyMessage="No Spinning wheels found"
+            emptyMessage={<Trans id="No Spinning wheels found" />}
             tableStyle={{ minWidth: '50rem' }}
           /> 
           <CustomModal
-            title={'Delete Spin'}
+            title={<Trans id="delete_spinning_wheel" />}
             toggle={toggle}
             modal={modalToggle}
             body={
               <h3>
-                are_you_sure_you_want_to_delete?
+                <Trans id="are_you_sure_you_want_to_delete" />
               </h3>
             }
-            cancelTitle={'No'}
-            confirmTitle={'Yes'}
+            cancelTitle={<Trans id="no" />}
+            confirmTitle={<Trans id="yes" />}
           />
         </>
       }

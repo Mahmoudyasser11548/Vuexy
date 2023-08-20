@@ -1,6 +1,7 @@
 import React from 'react'
 import CustomDataTable from '../../../Components/Datatable/customDataTable'
 import { Columns } from './Columns'
+import { Trans } from '@lingui/react'
 
 const data = [
   {
@@ -36,7 +37,7 @@ const List = () => {
         data={data}
         rows={5} 
         rowsPerPageOptions={[5, 10, 25, 50]}
-        emptyMessage="No Spinning wheels found"
+        emptyMessage={<Trans id="No Spinning wheels found" />}
         tableStyle={{ minWidth: '50rem' }}
       />
     </>

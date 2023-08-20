@@ -1,0 +1,260 @@
+msgid ""
+msgstr ""
+"POT-Creation-Date: 2023-08-20 12:13+0300\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: @lingui/cli\n"
+"Language: en\n"
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Plural-Forms: \n"
+
+#. js-lingui-explicit-id
+#: src/views/SpinWheelConfigs/Fields.js:83
+msgid "isRequired"
+msgstr ""
+
+#. js-lingui-explicit-id
+#: src/views/SpinWheelConfigs/Fields.js:120
+msgid "No Fields found"
+msgstr ""
+
+#. js-lingui-explicit-id
+#: src/@core/layouts/components/navbar/UserDropdown.js:46
+msgid "Logout"
+msgstr ""
+
+#. js-lingui-explicit-id
+#: src/navigation/horizontal/index.js:7
+#: src/navigation/vertical/index.js:8
+msgid "Spin Wheel"
+msgstr ""
+
+#. js-lingui-explicit-id
+#: src/views/SpinningWheel/List.js:56
+msgid "Spinning Wheels"
+msgstr ""
+
+#. js-lingui-explicit-id
+#: src/views/SpinningWheel/List.js:67
+msgid "Add Spinning Wheel"
+msgstr ""
+
+#. js-lingui-explicit-id
+#: src/views/SpinningWheel/List.js:87
+#: src/views/SpinningWheel/rewards/List.js:40
+msgid "No Spinning wheels found"
+msgstr ""
+
+#. js-lingui-explicit-id
+#: src/views/SpinningWheel/List.js:91
+msgid "delete_spinning_wheel"
+msgstr ""
+
+#. js-lingui-explicit-id
+#: src/views/SpinningWheel/List.js:96
+#: src/views/SpinWheelConfigs/Fields.js:129
+msgid "are_you_sure_you_want_to_delete"
+msgstr ""
+
+#. js-lingui-explicit-id
+#: src/views/SpinningWheel/List.js:99
+msgid "no"
+msgstr ""
+
+#. js-lingui-explicit-id
+#: src/views/SpinningWheel/List.js:100
+msgid "yes"
+msgstr ""
+
+#. js-lingui-explicit-id
+#: src/views/SpinWheelConfigs/Fields.js:80
+#: src/views/SpinWheelConfigs/Rewards.js:116
+msgid "name"
+msgstr ""
+
+#. js-lingui-explicit-id
+#: src/views/SpinWheelConfigs/Rewards.js:123
+msgid "quantity"
+msgstr ""
+
+#. js-lingui-explicit-id
+#: src/views/SpinWheelConfigs/Rewards.js:130
+msgid "Lose"
+msgstr ""
+
+#. js-lingui-explicit-id
+#: src/views/SpinWheelConfigs/Rewards.js:137
+msgid "try_again"
+msgstr ""
+
+#. js-lingui-explicit-id
+#: src/views/SpinWheelConfigs/Fields.js:97
+#: src/views/SpinWheelConfigs/Rewards.js:166
+msgid "Confirm"
+msgstr ""
+
+#. js-lingui-explicit-id
+#: src/views/SpinWheelConfigs/Rewards.js:190
+msgid "reset_quantities"
+msgstr ""
+
+#. js-lingui-explicit-id
+#: src/views/SpinWheelConfigs/Rewards.js:207
+msgid "No Rewards found"
+msgstr ""
+
+#. js-lingui-explicit-id
+#: src/views/SpinWheelConfigs/Rewards.js:211
+#: src/views/SpinWheelConfigs/Rewards.js:223
+msgid "Delete Reward"
+msgstr ""
+
+#. js-lingui-explicit-id
+#: src/views/SpinWheelConfigs/Rewards.js:216
+msgid "are_you_sure_you_want_to_delete?"
+msgstr ""
+
+#. js-lingui-explicit-id
+#: src/views/SpinWheelConfigs/Fields.js:132
+#: src/views/SpinWheelConfigs/Rewards.js:219
+#: src/views/SpinWheelConfigs/Segmants.js:164
+msgid "No"
+msgstr ""
+
+#. js-lingui-explicit-id
+#: src/views/SpinWheelConfigs/Fields.js:133
+#: src/views/SpinWheelConfigs/Rewards.js:220
+#: src/views/SpinWheelConfigs/Segmants.js:163
+msgid "Yes"
+msgstr ""
+
+#. js-lingui-explicit-id
+#: src/views/SpinWheelConfigs/Rewards.js:228
+msgid "are_you_sure_you_want_to_reset_quantities"
+msgstr ""
+
+#. js-lingui-explicit-id
+#: src/views/SpinWheelConfigs/Segmants.js:90
+msgid "title"
+msgstr ""
+
+#. js-lingui-explicit-id
+#: src/views/SpinWheelConfigs/Segmants.js:98
+msgid "reward"
+msgstr ""
+
+#. js-lingui-explicit-id
+#: src/views/SpinWheelConfigs/Segmants.js:111
+#: src/views/SpinWheelConfigs/Wheel.js:89
+msgid "color"
+msgstr ""
+
+#. js-lingui-explicit-id
+#: src/views/SpinWheelConfigs/Segmants.js:119
+msgid "textColor"
+msgstr ""
+
+#. js-lingui-explicit-id
+#: src/views/SpinWheelConfigs/Segmants.js:132
+msgid "confirm"
+msgstr ""
+
+#. js-lingui-explicit-id
+#: src/views/SpinWheelConfigs/Segmants.js:156
+msgid "No Segmants found"
+msgstr ""
+
+#. js-lingui-explicit-id
+#: src/views/SpinWheelConfigs/Segmants.js:160
+msgid "delete segment"
+msgstr ""
+
+#. js-lingui-explicit-id
+#: src/views/SpinWheelConfigs/Segmants.js:165
+msgid "are_you_sure_you_want_to_delete seg?"
+msgstr ""
+
+#. js-lingui-explicit-id
+#: src/views/SpinWheelConfigs/Tabs.js:14
+msgid "Spinning_Wheel"
+msgstr ""
+
+#. js-lingui-explicit-id
+#: src/views/SpinWheelConfigs/Tabs.js:22
+msgid "Fields"
+msgstr ""
+
+#. js-lingui-explicit-id
+#: src/views/SpinWheelConfigs/Tabs.js:30
+msgid "Rewards"
+msgstr ""
+
+#. js-lingui-explicit-id
+#: src/views/SpinWheelConfigs/Tabs.js:38
+msgid "Segmants"
+msgstr ""
+
+#. js-lingui-explicit-id
+#: src/views/SpinWheelConfigs/Wheel.js:71
+msgid "Name"
+msgstr ""
+
+#. js-lingui-explicit-id
+#: src/views/SpinWheelConfigs/Wheel.js:76
+msgid "expiry_date"
+msgstr ""
+
+#. js-lingui-explicit-id
+#: src/views/SpinWheelConfigs/Wheel.js:83
+msgid "background_color"
+msgstr ""
+
+#. js-lingui-explicit-id
+#: src/views/SpinWheelConfigs/Wheel.js:95
+msgid "text_color"
+msgstr ""
+
+#. js-lingui-explicit-id
+#: src/views/SpinWheelConfigs/Wheel.js:100
+msgid "top_header"
+msgstr ""
+
+#. js-lingui-explicit-id
+#: src/views/SpinWheelConfigs/Wheel.js:105
+msgid "bottom_header"
+msgstr ""
+
+#. js-lingui-explicit-id
+#: src/views/SpinWheelConfigs/Wheel.js:110
+msgid "button_text"
+msgstr ""
+
+#. js-lingui-explicit-id
+#: src/views/SpinWheelConfigs/Wheel.js:118
+msgid "Type"
+msgstr ""
+
+#. js-lingui-explicit-id
+#: src/views/SpinWheelConfigs/Wheel.js:126
+msgid "Active"
+msgstr ""
+
+#. js-lingui-explicit-id
+#: src/views/SpinWheelConfigs/Wheel.js:130
+msgid "ShowRewardsImages"
+msgstr ""
+
+#. js-lingui-explicit-id
+#: src/views/SpinWheelConfigs/Wheel.js:134
+msgid "enableRegistration"
+msgstr ""
+
+#. js-lingui-explicit-id
+#: src/views/SpinWheelConfigs/Wheel.js:162
+msgid "Save Changes"
+msgstr ""
