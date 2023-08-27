@@ -1,49 +1,49 @@
+// ** React Imports
+import { useContext } from 'react'
+
 // ** Third Party Components
-import { useTranslation } from "react-i18next"
-import ReactCountryFlag from "react-country-flag"
+import ReactCountryFlag from 'react-country-flag'
+import { UncontrolledDropdown, DropdownMenu, DropdownItem, DropdownToggle } from 'reactstrap'
 
-// ** Reactstrap Imports
-import {
-  UncontrolledDropdown,
-  DropdownMenu,
-  DropdownItem,
-  DropdownToggle
-} from "reactstrap"
-
+// ** Internationalization Context
+import { IntlContext } from '../../../../utility/context/Internationalization'
+import { useRTL } from '../../../../utility/hooks/useRTL'
 import { locales } from '../../../../redux/SupportedLocales'
 
-
 const IntlDropdown = () => {
-  // ** Hooks
-  const { i18n } = useTranslation()
-
+  // ** Context
+  const intlContext = useContext(IntlContext)
+  const [isRtl, setValue] = useRTL()
   // ** Vars
   const langObj = locales
-
   // ** Function to switch Language
   const handleLangUpdate = (e, lang) => {
     e.preventDefault()
-    i18n.changeLanguage(lang)
+    intlContext.switchLanguage(lang)
+    setValue(lang.isRtl)
   }
-
+  if (Object.keys(locales).length <= 1) {
+    return <></>
+  }
   return (
     <UncontrolledDropdown href='/' tag='li' className='dropdown-language nav-item'>
       <DropdownToggle href='/' tag='a' className='nav-link' onClick={e => e.preventDefault()}>
         <ReactCountryFlag
           className='country-flag flag-icon'
-          countryCode={locales.en.code }
+          countryCode={locales[intlContext.locale].flag }
           svg
         />
-        <span className='selected-language'>{langObj.en.name}</span>
+        <span className='selected-language'>{langObj[intlContext.locale].name}</span>
       </DropdownToggle>
       <DropdownMenu className='mt-0' end>
         {locales && Object.keys(locales).map((key, i) => {
           return (
-          <DropdownItem key={i} href='/' tag='a' onClick={e => handleLangUpdate(e, locales[key])}>
-            <ReactCountryFlag className='country-flag' countryCode={locales[key].flag} svg />
-            <span className='ml-1 ms-1'>{locales[key].name}</span>
-          </DropdownItem>
-        )})}
+            <DropdownItem key={i} href='/' tag='a' onClick={e => handleLangUpdate(e, locales[key])}>
+              <ReactCountryFlag className='country-flag' countryCode={locales[key].flag} svg />
+              <span className='ml-1'>{locales[key].name}</span>
+            </DropdownItem>
+          )
+        })}
       </DropdownMenu>
     </UncontrolledDropdown>
   )

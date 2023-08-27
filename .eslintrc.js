@@ -71,9 +71,9 @@ module.exports = {
     // ES6
     'arrow-spacing': 'error',
     'no-confusing-arrow': 'error',
-    'no-duplicate-imports': 'error',
+    // 'no-duplicate-imports': 'error',
     'no-var': 'error',
-    'object-shorthand': 'error',
+    // 'object-shorthand': 'error',
     'prefer-const': 'error',
     'prefer-template': 'error'
   }

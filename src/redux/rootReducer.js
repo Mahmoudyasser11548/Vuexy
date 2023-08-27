@@ -1,8 +1,12 @@
 // ** Reducers Imports
 import layout from "./layout"
+import app from "./app/appSlice"
 import navbar from "./navbar"
-import rule from "./rules"
 
-const rootReducer = { navbar, layout, rule }
+const rootReducer = { 
+    layout,
+    navbar,
+    app
+}
 
 export default rootReducer

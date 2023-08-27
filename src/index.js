@@ -39,6 +39,9 @@ import "./@core/assets/fonts/feather/iconfont.css"
 import "./@core/scss/core.scss"
 import "./assets/scss/style.scss"
 
+// Intl Provider
+import { IntlProviderWrapper } from './utility/context/Internationalization'
+
 // ** Service Worker
 import * as serviceWorker from "./serviceWorker"
 
@@ -53,11 +56,13 @@ root.render(
     <Provider store={store}>
       <Suspense fallback={<Spinner />}>
         <ThemeContext>
-          <LazyApp />
-          <Toaster
-            position={themeConfig.layout.toastPosition}
-            toastOptions={{ className: "react-hot-toast" }}
-          />
+          <IntlProviderWrapper>
+            <LazyApp />
+            <Toaster
+              position={themeConfig.layout.toastPosition}
+              toastOptions={{ className: "react-hot-toast" }}
+            />
+          </IntlProviderWrapper>
         </ThemeContext>
       </Suspense>
     </Provider>

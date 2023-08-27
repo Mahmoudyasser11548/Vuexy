@@ -5,19 +5,20 @@ export const locales = {
     code: "ar",
     name: "العربية",
     direction: "RTL",
-    // "flag": toAbsoluteUrl("/media/svg/flags/158-egypt.svg"),
+    flag: "https://fastly.jsdelivr.net/gh/lipis/flag-icons/flags/4x3/eg.svg",
     culture: "ar-SA",
-    flag:"eg",
-    isRTL:true,
+    flag: "eg",
+    isRTL: true,
     default: true
   },
   en: {
     code: "en",
     name: "English",
     direction: "LTR",
-    // "flag": toAbsoluteUrl("/media/svg/flags/226-united-states.svg"),
+    flag: "https://fastly.jsdelivr.net/gh/lipis/flag-icons/flags/4x3/en.svg",
     culture: "en-US",
-    flag:"us",
+    flag: "us",
+    isRTL: false,
     default: false
   }
 }
