@@ -20,7 +20,7 @@ const authSlice = createSlice({
   name: 'auth',
   initialState: initialState,
   reducers: {
-    loginSuccess: (state, action) => {
+    login: (state, action) => {
       const user = jwtDecoder(action.payload.token)
       state.user = user
       state.isLoggedIn = true
@@ -34,7 +34,7 @@ const authSlice = createSlice({
       state.loginLoading = false
       state.loginError = action.payload
     },
-    loginExternalSuccess: (state, action) => {
+    loginExternal: (state, action) => {
       const user = jwtDecoder(action.payload.token)
       state.user = user
       state.isLoggedIn = true
@@ -47,7 +47,7 @@ const authSlice = createSlice({
       state.loginExternalLoading = false
       state.loginExternalLoadingError = action.payload
     },
-    updateTokenSuccess: (state, action) => {
+    updateToken: (state, action) => {
       const user = jwtDecoder(action.payload)
       if (user.active === false) {
         localStorage.removeItem("userData")
@@ -61,10 +61,10 @@ const authSlice = createSlice({
       localStorage.setItem("userData", JSON.stringify(user))
       localStorage.setItem("jwtToken", action.payload)
     },
-    resetPasswordSuccess: (state) => {
+    resetPassword: (state) => {
       state.changePassword_errors = null
     },
-    refreshTokenSuccess: (state, action) => {
+    refreshToken: (state, action) => {
       localStorage.setItem("jwtToken", action.payload.token)
       localStorage.setItem("refreshToken", action.payload.refreshToken)
       state.refreshToken = undefined
@@ -77,7 +77,7 @@ const authSlice = createSlice({
       state.user = undefined
       state.isLoggedIn = false
     },
-    switchAsTenantSuccess: (state, action) => {
+    switchAsTenant: (state, action) => {
       if (!action.payload) return
       const { tenantId, switched } = action.payload
       if (!switched) {
