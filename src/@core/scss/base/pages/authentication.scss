@@ -10,6 +10,15 @@ $auth-1-inner-max-width: 400px !default;
   min-height: calc(var(--vh, 1vh) * 100);
   width: 100%;
 
+
+  form {
+    > div {
+      margin-bottom: 1rem !important;
+      > div {
+        margin-bottom: 1rem !important;
+      }
+    }
+  }
   .auth-inner {
     width: 100%;
   }
@@ -169,4 +178,8 @@ $auth-1-inner-max-width: 400px !default;
       }
     }
   }
+}
+
+.auth-logo {
+  margin: 2rem;
 }

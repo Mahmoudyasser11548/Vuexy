@@ -28,6 +28,7 @@ const DefaultRoute = "/home"
 
 const Home = lazy(() => import("../../views/Home"))
 const Error = lazy(() => import("../../views/Error"))
+const Login = lazy(() => import("../../views/Login"))
 
 import spinningWheel from '../../views/SpinningWheel'
 import SpinWheelConfigs from '../../views/SpinWheelConfigs'
@@ -42,6 +43,14 @@ const Routes = [
   {
     path: "/home",
     element: <Home />
+  },
+  {
+    path: "/login",
+    element: <Login />,
+    meta: {
+      authRoute: true,
+      layout: "blank"
+    }
   },
   {
     path: "/error",
