@@ -25,7 +25,7 @@ const Login = () => {
       .min(5, <Trans id="min_is_5" />)
   })
 
-  const onSubmit = ({resetForm}) => {
+  const onSubmit = (_, {resetForm}) => {
     resetForm()
   }
 

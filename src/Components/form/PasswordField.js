@@ -63,7 +63,7 @@ const PasswordField = (props) => {
                         {...field}
                     /*eslint-enable */
                     />
-                    <InputGroupText addonType="append" onClick={() => setInputVisibility(!inputVisibility)}>
+                    <InputGroupText addontype="append" onClick={() => setInputVisibility(!inputVisibility)}>
                         {renderIcon()}
                     </InputGroupText>
                 {/* {(error && touched) && <FormFeedback>{error}</FormFeedback>} */}
