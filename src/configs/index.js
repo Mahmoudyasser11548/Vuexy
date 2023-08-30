@@ -16,5 +16,5 @@ export default {
   addressOnMap: "",
   gen_password_length: 10,
   gen_password_characters:
-    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijaklmnopqrstuvwxyz1234567890",
-};
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijaklmnopqrstuvwxyz1234567890"
+}

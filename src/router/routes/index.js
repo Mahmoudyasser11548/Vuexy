@@ -32,6 +32,8 @@ const Login = lazy(() => import("../../views/Login"))
 
 import spinningWheel from '../../views/SpinningWheel'
 import SpinWheelConfigs from '../../views/SpinWheelConfigs'
+import tenant from '../../views/tenant'
+import users from '../../views/usersManagement/Users'
 
 // ** Merge Routes
 const Routes = [
@@ -60,7 +62,9 @@ const Routes = [
     }
   },
   ...spinningWheel,
-  ...SpinWheelConfigs
+  ...SpinWheelConfigs,
+  ...tenant,
+  ...users
 ]
 
 const getRouteMeta = (route) => {
