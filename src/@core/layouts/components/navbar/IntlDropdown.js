@@ -40,7 +40,7 @@ const IntlDropdown = () => {
           return (
             <DropdownItem key={i} href='/' tag='a' onClick={e => handleLangUpdate(e, locales[key])}>
               <ReactCountryFlag className='country-flag' countryCode={locales[key].flag} svg />
-              <span className='ml-1'>{locales[key].name}</span>
+              <span className='ml-1 ms-1'>{locales[key].name}</span>
             </DropdownItem>
           )
         })}

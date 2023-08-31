@@ -34,6 +34,8 @@ import spinningWheel from '../../views/SpinningWheel'
 import SpinWheelConfigs from '../../views/SpinWheelConfigs'
 import tenant from '../../views/tenant'
 import users from '../../views/usersManagement/Users'
+import roles from '../../views/usersManagement/Roles'
+import guest from '../../views/Guest'
 
 // ** Merge Routes
 const Routes = [
@@ -64,7 +66,9 @@ const Routes = [
   ...spinningWheel,
   ...SpinWheelConfigs,
   ...tenant,
-  ...users
+  ...users,
+  ...roles,
+  ...guest
 ]
 
 const getRouteMeta = (route) => {
