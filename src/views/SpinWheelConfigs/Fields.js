@@ -121,7 +121,7 @@ const Fields = () => {
         tableStyle={{ minWidth: '50rem' }}
       /> 
       <CustomModal
-        title={'Delete Field'}
+        title={<Trans id='Delete Field' />}
         toggle={deleteToggle}
         modal={modalDelete}
         body={

@@ -28,8 +28,8 @@ export const Columns = (deleteHandler, editHandler) => {
   }
 
   return [
-    {field: 'name', header: 'Name', filter: 'filter', style: '22rem', sortable: true},
-    {field: 'color', header: 'Color', filter: 'filter', style: '22rem' },
+    {field: 'name', header: 'Name', style: '22rem', sortable: true},
+    {field: 'type', header: 'Type', style: '22rem' },
     {field: 'action', header: 'Actions', bodyTemplate: editAndDeleteTemplate }
   ]
 }
