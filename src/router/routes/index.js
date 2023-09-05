@@ -36,6 +36,7 @@ import tenant from '../../views/tenant'
 import users from '../../views/usersManagement/Users'
 import roles from '../../views/usersManagement/Roles'
 import guest from '../../views/Guest'
+import integration from '../../views/Integration'
 
 // ** Merge Routes
 const Routes = [
@@ -68,7 +69,8 @@ const Routes = [
   ...tenant,
   ...users,
   ...roles,
-  ...guest
+  ...guest,
+  ...integration
 ]
 
 const getRouteMeta = (route) => {
