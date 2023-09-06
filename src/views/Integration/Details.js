@@ -73,12 +73,10 @@ const Details = () => {
                   <Col lg="4" md="4">
                     <SelectField
                       options={[
-                        { id: "RabbitMq", label: "RabbitMq" },
-                        { id: "Api", label: "Api" }
+                        { label: "RabbitMq", value: "RabbitMq" },
+                        { label: "Api", value: "Api" }
                       ]}
                       label={<Trans id="Type" />}
-                      keyValue={"id"}
-                      title={"label"}
                       name="type"
                     />
                   </Col>

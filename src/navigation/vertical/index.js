@@ -10,19 +10,6 @@ export default [
     navLink: "/spinningWheel/list"
   },
   {
-    id: "guests",
-    title: <Trans id="Guests" />,
-    icon: <Aperture size={20} />,
-    navLink: "/guests/list"
-  },
-  {
-    id: "tenants",
-    title: <Trans id="Tenants" />,
-    icon: <User size={20} />,
-    navLink: "/tenant/list",
-    permissions: "read_user"
-  },
-  {
     id: "users",
     title: <Trans id="Users" />,
     icon: <Users size={20} />,

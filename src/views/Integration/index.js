@@ -1,7 +1,7 @@
 import { lazy } from "react"
 
-const Details = lazy(() => import("src/views/Integration/Details"))
-const List = lazy(() => import("src/views/Integration/List"))
+const Details = lazy(() => import("@src/views/Integration/Details"))
+const List = lazy(() => import("@src/views/Integration/List"))
 
 const routes = [
   {

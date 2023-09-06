@@ -1,6 +1,6 @@
 import React from 'react'
 import { Nav, NavItem, NavLink } from "reactstrap"
-import { Aperture, Gift, Layers, User } from "react-feather"
+import { Aperture, Gift, Layers } from "react-feather"
 import { Trans } from '@lingui/react'
 
 const Tabs = ({ activeTab, toggleTab }) => {
@@ -15,14 +15,6 @@ const Tabs = ({ activeTab, toggleTab }) => {
             </span>
           </NavLink>
         </NavItem>
-        <NavItem>
-          <NavLink active={activeTab === "2"} onClick={() => toggleTab("2")}>
-            <User size={18} className="mr-1" />
-            <span className="font-weight-bold">
-              <Trans id="Fields" />
-            </span>
-          </NavLink>
-          </NavItem>
         <NavItem>
           <NavLink active={activeTab === "3"} onClick={() => toggleTab("3")}>
             <Gift size={18} className="mr-1" />

@@ -20,7 +20,7 @@ const DatePickerField = ({
       <Label for="default-picker">{label}</Label>
       <Flatpickr
         id="default-picker"
-        className={classnames("form-control mb-2", {
+        className={classnames("form-control mb-1", {
           "is-invalid": error && touched
         })}
         options={{

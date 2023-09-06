@@ -64,94 +64,103 @@ const Wheel = () => {
                 return (
                   <>
                     <Form>
-                      <Row>
-                        <Col lg="8" sm="12">
-                          <InputField
-                            name="name"
-                            label={<Trans id="Name" />}
-                          />
-
-                          <DatePickerField
-                            name="expiryDate"
-                            label={<Trans id="expiry_date" />}
-                            enableTime={true}
-                          />
-
-                          <InputField
-                            name="bgColor"
-                            type="color"
-                            label={<Trans id="background_color" />}
-                          />
-
-                          <InputField
-                            name="color"
-                            type="color"
-                            label={<Trans id="color" />}
-                          />
-
-                          <InputField
-                            name="textColor"
-                            type="color"
-                            label={<Trans id="text_color" />}
-                          />
-
-                          <InputField
-                            name="topHeader"
-                            label={<Trans id="top_header" />}
-                          />
-
-                          <InputField
-                            name="bottomHeader"
-                            label={<Trans id="bottom_header" />}
-                          />
-
-                          <InputField
-                            name="buttonText"
-                            label={<Trans id="button_text" />}
-                          />
-
-                          <SelectField
-                            options={[
-                              { id: "spin", label: "Spin" },
-                              { id: "slider", label: "Slider" }
-                            ]}
-                            label={<Trans id="Type" />}
-                            keyValue={"id"}
-                            title={"label"}
-                            name="type"
-                          />
-
-                          <SwitchField 
-                            name="active" 
-                            label={<Trans id="Active" />}
-                          />
-                          <SwitchField
-                            name="showRewardsImages"
-                            label={<Trans id="ShowRewardsImages" />}
-                          />
-                          <SwitchField
-                            name="isAuthorized"
-                            label={<Trans id="enableRegistration" />}
-                          />
-                        </Col>
-
-                        <Col lg="4" md="12" className="d-flex flex-column ">
-                          <ImageField
-                            title="logo"
-                            name="logo"
-                            mode="add"
-                            width={200}
-                            height={200}
-                          />
-                          <ImageField
-                            title="Circle Image"
-                            name="circleImg"
-                            mode="add"
-                            width={200}
-                            height={200}
-                          />
-                        </Col>
-
+                      <Row className='justify-content-between'>
+                        <Row className='w-75'>
+                          <Col md='4'>
+                            <InputField
+                              name="name"
+                              label={<Trans id="Name" />}
+                            />
+                          </Col>
+                          <Col md='4'>
+                            <DatePickerField
+                              name="expiryDate"
+                              label={<Trans id="expiry_date" />}
+                              enableTime={true}
+                            />
+                          </Col>
+                          <Col md='4'>
+                            <InputField
+                              name="buttonText"
+                              label={<Trans id="button_text" />}
+                            />
+                          </Col>
+                          <Col md='4'>
+                            <InputField
+                              name="bgColor"
+                              type="color"
+                              label={<Trans id="background_color" />}
+                            />
+                          </Col>
+                          <Col md='4'>
+                            <InputField
+                              name="color"
+                              type="color"
+                              label={<Trans id="color" />}
+                            />
+                          </Col>
+                          <Col md='4'>
+                            <InputField
+                              name="textColor"
+                              type="color"
+                              label={<Trans id="text_color" />}
+                            />
+                          </Col>
+                          <Col md='4'>
+                            <InputField
+                              name="topHeader"
+                              label={<Trans id="top_header" />}
+                            />
+                          </Col>
+                          <Col md='4'>
+                            <InputField
+                              name="bottomHeader"
+                              label={<Trans id="bottom_header" />}
+                            />
+                          </Col>
+                          <Col md='4'>
+                            <SelectField
+                              options={[
+                                { label: "Spin", value: "spin" },
+                                { label: "Slider", value: "slider" }
+                              ]}
+                              label={<Trans id="Type" />}
+                              name="type"
+                            />
+                          </Col>
+                          <Col md='4'>
+                            <SwitchField 
+                              name="active" 
+                              label={<Trans id="Active" />}
+                            />
+                            <SwitchField
+                              name="showRewardsImages"
+                              label={<Trans id="ShowRewardsImages" />}
+                            />
+                            <SwitchField
+                              name="isAuthorized"
+                              label={<Trans id="enableRegistration" />}
+                            />
+                          </Col>
+                        </Row>
+                        <Row className='w-25'>
+                          <Col md='3' className="d-flex flex-column">
+                            <ImageField
+                              title="logo"
+                              name="logo"
+                              mode="add"
+                              width={200}
+                              height={200}
+                            />
+                            <ImageField
+                              title="Circle Image"
+                              name="circleImg"
+                              mode="add"
+                              width={200}
+                              height={200}
+                            />
+                          </Col>
+                        </Row>
                       </Row>
                       <div className="d-flex">
                         <LoadingButton

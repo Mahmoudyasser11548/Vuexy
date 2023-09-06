@@ -93,13 +93,11 @@ const Segmants = () => {
                       <Col>
                         <SelectField
                           name="rewardId"
-                          keyValue={"id"}
-                          title={"label"}
                           label={<Trans id="reward" />}
                           options={[
-                            {id: 'prize1', label: 'Prize1'},
-                            {id: 'prize2', label: 'Prize2'},
-                            {id: 'prize3', label: 'Prize3'}
+                            {label: 'Prize1', value: 'prize1'},
+                            {label: 'Prize2', value: 'prize2'},
+                            {label: 'Prize3', value: 'prize3'}
                           ]}
                         />
                       </Col>
@@ -143,7 +141,7 @@ const Segmants = () => {
       <CustomDataTable 
         dataKey="id"
         headerSearch={true}
-        filterDisplay={true} 
+        filterDisplay={false} 
         filterFieldsSet={filterFieldsSet}
         globalFilterFields={['name', 'color']}
         columns={Columns(deleteHandler, editHandler)}

@@ -60,6 +60,7 @@ const Rewards = () => {
   }
 
   const editHandler = () => {}
+  const extraData = () => {}
 
 
   // Filter Table
@@ -194,10 +195,10 @@ const Rewards = () => {
       <CustomDataTable 
         dataKey="id"
         headerSearch={true}
-        filterDisplay={true} 
+        filterDisplay={false} 
         filterFieldsSet={filterFieldsSet}
         globalFilterFields={['name', 'quantity', 'remainning', 'consumed']}
-        columns={Columns(deleteHandler, editHandler)}
+        columns={Columns(deleteHandler, editHandler, extraData)}
         data={data}
         selectionMode='single'
         selection={selectedReward} 

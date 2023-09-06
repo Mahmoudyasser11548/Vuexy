@@ -75,7 +75,7 @@ const List = () => {
             dataKey="id"
             headerSearch={true}
             filterFieldsSet={filterFieldsSet}
-            filterDisplay={false} 
+            filterDisplay={true} 
             globalFilterFields={['name', 'tenant']}
             columns={Columns(deleteHandler, downloadHandler, editHandler)}
             data={data}

@@ -48,8 +48,8 @@ export const Columns = (deleteHandler, downloadHandler, editHandler) => {
   }
 
   return [
-    {field: 'name', header: 'Name', style: '22rem', sortable: true},
-    {field: 'tenant', header: 'Tenant', style: '22rem', sortable: true},
+    {field: 'name', header: 'Name', filter: 'filter', style: '22rem', sortable: true},
+    {field: 'tenant', header: 'Tenant', filter: 'filter', style: '22rem', sortable: true},
     {field: 'action', header: 'Actions', bodyTemplate: editAndDeleteTemplate }
   ]
 }

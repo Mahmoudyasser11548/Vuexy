@@ -3,7 +3,6 @@ import CustomCard from '../../Components/shared/CustomCard'
 import { Card, CardBody, Col, Row, TabContent, TabPane } from 'reactstrap'
 import Tabs from './Tabs'
 import Wheel from './Wheel'
-import Fields from './Fields'
 import Rewards from './Rewards'
 import Segmants from './Segmants'
 
@@ -35,12 +34,6 @@ const WholeTabs = () => {
 
                       <TabPane tabId="1">
                         <Wheel
-                          activeTab={activeTab} 
-                        />
-                      </TabPane>
-
-                      <TabPane tabId="2">
-                        <Fields
                           activeTab={activeTab} 
                         />
                       </TabPane>
