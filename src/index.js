@@ -1,49 +1,40 @@
-// ** React Imports
-import { Suspense, lazy } from "react"
-import { createRoot } from "react-dom/client"
-import { BrowserRouter } from "react-router-dom"
-
-// ** Redux Imports
-import { store } from "./redux/store"
-import { Provider } from "react-redux"
-
-// ** ThemeColors Context
-
-import { ThemeContext } from "./utility/context/ThemeColors"
-
-// ** ThemeConfig
-import themeConfig from "./configs/themeConfig"
-
-// ** Toast
-import { Toaster } from "react-hot-toast"
-
-// ** Spinner (Splash Screen)
-import Spinner from "./@core/components/spinner/Fallback-spinner"
-
 // ** Ripple Button
 import "./@core/components/ripple-button"
-
 // ** PrismJS
 import "prismjs"
 import "prismjs/themes/prism-tomorrow.css"
 import "prismjs/components/prism-jsx.min"
-
 // ** React Perfect Scrollbar
 import "react-perfect-scrollbar/dist/css/styles.css"
-
 // ** React Hot Toast Styles
 import "@styles/react/libs/react-hot-toasts/react-hot-toasts.scss"
-
 // ** Core styles
 import "./@core/assets/fonts/feather/iconfont.css"
 import "./@core/scss/core.scss"
 import "./assets/scss/style.scss"
 
-// Intl Provider
-import { IntlProviderWrapper } from './utility/context/Internationalization'
-
 // ** Service Worker
 import * as serviceWorker from "./serviceWorker"
+
+// ** React Imports
+import { Suspense, lazy } from "react"
+
+import { BrowserRouter } from "react-router-dom"
+// Intl Provider
+import { IntlProviderWrapper } from "./utility/context/Internationalization"
+import { Provider } from "react-redux"
+// ** Spinner (Splash Screen)
+import Spinner from "./@core/components/spinner/Fallback-spinner"
+import { ThemeContext } from "./utility/context/ThemeColors"
+// ** Toast
+import { Toaster } from "react-hot-toast"
+import { createRoot } from "react-dom/client"
+// ** Redux Imports
+import { store } from "./redux/store"
+// ** ThemeConfig
+import themeConfig from "./configs/themeConfig"
+
+// ** ThemeColors Context
 
 // ** Lazy load app
 const LazyApp = lazy(() => import("./App"))
