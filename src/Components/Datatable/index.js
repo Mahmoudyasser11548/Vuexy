@@ -1,1 +1,1 @@
-export { default as customDataTable } from "./customDataTable"
+export { default as CustomDataTable } from "./customDataTable"

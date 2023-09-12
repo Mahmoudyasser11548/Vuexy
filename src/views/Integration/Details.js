@@ -1,16 +1,17 @@
-import { Trans, useLingui } from '@lingui/react'
-import React from 'react'
-import * as yup from 'yup'
-import CustomCard from '../../Components/shared/CustomCard'
-import { Form, Formik } from 'formik'
-import { Col, Row } from 'reactstrap'
-import InputField from '../../Components/form/InputField'
-import SelectField from '../../Components/form/SelectField'
-import LoadingButton from '../../Components/LoadingButton'
+import * as yup from "yup"
+
+import { Col, Row } from "reactstrap"
+import { Form, Formik } from "formik"
+import { InputField, SelectField } from "../../Components/form"
+import { Trans, useLingui } from "@lingui/react"
+
+import { CustomCard } from "../../Components/shared"
+import { LoadingButton } from "../../Components"
+import React from "react"
 
 const Details = () => {
   const { i18n } = useLingui()
-  const configId = ''
+  const configId = ""
 
   const initialValues = () => {
     return {
@@ -29,152 +30,158 @@ const Details = () => {
       password: "",
       exchangeName: "",
       queueName: "",
-      hostname: ""
+      hostname: "",
     }
   }
 
   const validationSchema = yup.object().shape({
-    name: yup.string().required()
+    name: yup.string().required(),
   })
 
   // ** Function to handle form submit
-  const onSubmit = (_, {resetForm}) => {
+  const onSubmit = (_, { resetForm }) => {
     resetForm()
   }
 
   return (
     <>
-    <CustomCard
-      title={
-        configId !== "new" ? (
-          <Trans id="edit_config" />
-        ) : (
-          <Trans id="create_config" />
-        )
-      }
-      body={
-        <Formik
-          onSubmit={onSubmit}
-          enableReinitialize={true}
-          initialValues={initialValues()}
-          validationSchema={validationSchema}
-        >
-          {({ values }) => {
-            return (
-              <Form autoComplete="nope">
-                <Row>
-                  <Col lg="4" md="4">
-                    <InputField
-                      label={<Trans id="name" />}
-                      name="name"
-                      placeHolder={i18n._("name")}
-                    />
-                  </Col>
-                  <Col lg="4" md="4">
-                    <SelectField
-                      options={[
-                        { label: "RabbitMq", value: "RabbitMq" },
-                        { label: "Api", value: "Api" }
-                      ]}
-                      label={<Trans id="Type" />}
-                      name="type"
-                    />
-                  </Col>
-                </Row>
-                {values?.type === "RabbitMq" && (
-                  <>
-                    <Row>
-                      <Col lg="4" md="4">
-                        <InputField
-                          label={<Trans id="hostUrl" />}
-                          name="hostUrl"
-                          placeHolder={i18n._("hostUrl")}
-                        />
-                      </Col>
-                      <Col lg="4" md="4">
-                        <InputField
-                          label={<Trans id="hostname" />}
-                          name="hostname"
-                          placeHolder={i18n._("hostname")}
-                        />
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col lg="4" md="4">
-                        <InputField
-                          label={<Trans id="port" />}
-                          name="port"
-                          placeHolder={i18n._("port")}
-                        />
-                      </Col>
-                      <Col lg="4" md="4">
-                        <InputField
-                          label={<Trans id="exchangeName" />}
-                          name="exchangeName"
-                          placeHolder={i18n._("exchangeName")}
-                        />
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col lg="4" md="4">
-                        <InputField
-                          label={<Trans id="username" />}
-                          name="username"
-                          placeHolder={i18n._("username")}
-                        />
-                      </Col>
-                      <Col lg="4" md="4">
-                        <InputField
-                          label={<Trans id="password" />}
-                          name="password"
-                          placeHolder={i18n._("password")}
-                        />
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col lg="4" md="4">
-                        <InputField
-                          label={<Trans id="queueName" />}
-                          name="queueName"
-                          placeHolder={i18n._("queueName")}
-                        />
-                      </Col>
-                    </Row>
-                  </>
-                )}
-                {values?.type === "Api" && (
+      <CustomCard
+        title={
+          configId !== "new" ? (
+            <Trans id="edit_config" />
+          ) : (
+            <Trans id="create_config" />
+          )
+        }
+        body={
+          <Formik
+            onSubmit={onSubmit}
+            enableReinitialize={true}
+            initialValues={initialValues()}
+            validationSchema={validationSchema}
+          >
+            {({ values }) => {
+              return (
+                <Form autoComplete="nope">
                   <Row>
                     <Col lg="4" md="4">
                       <InputField
-                        label={<Trans id="Url" />}
-                        name="url"
-                        placeHolder={i18n._("Url")}
+                        label={<Trans id="name" />}
+                        name="name"
+                        placeHolder={i18n._("name")}
                       />
                     </Col>
                     <Col lg="4" md="4">
-                      <InputField
-                        label={<Trans id="Method" />}
-                        name="method"
-                        placeHolder={i18n._("Method")}
+                      <SelectField
+                        options={[
+                          {
+                            label: "RabbitMq",
+                            value: "RabbitMq",
+                          },
+                          {
+                            label: "Api",
+                            value: "Api",
+                          },
+                        ]}
+                        label={<Trans id="Type" />}
+                        name="type"
                       />
                     </Col>
                   </Row>
-                )}
-                <div className="d-flex justify-content-end">
-                  <LoadingButton
-                    type="submit"
-                    color="primary"
-                    className="btn-primary ml-auto"
-                  >
-                    {<Trans id="Save Changes" />}
-                  </LoadingButton>
-                </div>
-              </Form>
-            )
-          }}
-        </Formik>
-      }
-    />
+                  {values?.type === "RabbitMq" && (
+                    <>
+                      <Row>
+                        <Col lg="4" md="4">
+                          <InputField
+                            label={<Trans id="hostUrl" />}
+                            name="hostUrl"
+                            placeHolder={i18n._("hostUrl")}
+                          />
+                        </Col>
+                        <Col lg="4" md="4">
+                          <InputField
+                            label={<Trans id="hostname" />}
+                            name="hostname"
+                            placeHolder={i18n._("hostname")}
+                          />
+                        </Col>
+                      </Row>
+                      <Row>
+                        <Col lg="4" md="4">
+                          <InputField
+                            label={<Trans id="port" />}
+                            name="port"
+                            placeHolder={i18n._("port")}
+                          />
+                        </Col>
+                        <Col lg="4" md="4">
+                          <InputField
+                            label={<Trans id="exchangeName" />}
+                            name="exchangeName"
+                            placeHolder={i18n._("exchangeName")}
+                          />
+                        </Col>
+                      </Row>
+                      <Row>
+                        <Col lg="4" md="4">
+                          <InputField
+                            label={<Trans id="username" />}
+                            name="username"
+                            placeHolder={i18n._("username")}
+                          />
+                        </Col>
+                        <Col lg="4" md="4">
+                          <InputField
+                            label={<Trans id="password" />}
+                            name="password"
+                            placeHolder={i18n._("password")}
+                          />
+                        </Col>
+                      </Row>
+                      <Row>
+                        <Col lg="4" md="4">
+                          <InputField
+                            label={<Trans id="queueName" />}
+                            name="queueName"
+                            placeHolder={i18n._("queueName")}
+                          />
+                        </Col>
+                      </Row>
+                    </>
+                  )}
+                  {values?.type === "Api" && (
+                    <Row>
+                      <Col lg="4" md="4">
+                        <InputField
+                          label={<Trans id="Url" />}
+                          name="url"
+                          placeHolder={i18n._("Url")}
+                        />
+                      </Col>
+                      <Col lg="4" md="4">
+                        <InputField
+                          label={<Trans id="Method" />}
+                          name="method"
+                          placeHolder={i18n._("Method")}
+                        />
+                      </Col>
+                    </Row>
+                  )}
+                  <div className="d-flex justify-content-end">
+                    <LoadingButton
+                      type="submit"
+                      color="primary"
+                      className="btn-primary ml-auto"
+                    >
+                      {<Trans id="Save Changes" />}
+                    </LoadingButton>
+                  </div>
+                </Form>
+              )
+            }}
+          </Formik>
+        }
+      />
     </>
   )
 }

@@ -1,7 +1,8 @@
-import React from 'react'
-import { Nav, NavItem, NavLink } from "reactstrap"
 import { Aperture, Gift, Layers } from "react-feather"
-import { Trans } from '@lingui/react'
+import { Nav, NavItem, NavLink } from "reactstrap"
+
+import React from "react"
+import { Trans } from "@lingui/react"
 
 const Tabs = ({ activeTab, toggleTab }) => {
   return (

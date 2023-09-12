@@ -1,20 +1,24 @@
-import React from 'react'
 import * as yup from "yup"
-import CustomCard from '../../../Components/shared/CustomCard'
-import { Trans, useLingui } from '@lingui/react'
-import { Form, Formik } from 'formik'
-import { Button, Col, Row } from 'reactstrap'
-import InputField from '../../../Components/form/InputField'
-import SwitchField from '../../../Components/form/SwitchField'
-import PasswordField from '../../../Components/form/PasswordField'
-import PhoneField from '../../../Components/form/PhoneField'
+
+import { Button, Col, Row } from "reactstrap"
+import { Form, Formik } from "formik"
+import {
+  InputField,
+  PasswordField,
+  PhoneField,
+  SwitchField,
+} from "../../../Components/form"
+import { Trans, useLingui } from "@lingui/react"
+
+import { CustomCard } from "../../../Components/shared"
+import { LoadingButton } from "../../../Components"
+import React from "react"
 import { generatePassword } from "../../../utility/Utils"
-import LoadingButton from '../../../Components/LoadingButton'
 
 const Details = () => {
   const { i18n } = useLingui()
 
-  const userId = ''
+  const userId = ""
 
   const initialValues = () => {
     return {
@@ -23,7 +27,7 @@ const Details = () => {
       email: "",
       phoneNumber: "",
       active: false,
-      roles: ["Admin"]
+      roles: ["Admin"],
     }
   }
 
@@ -40,11 +44,11 @@ const Details = () => {
           return true
         }
       }),
-    phoneNumber: yup.string().required()
+    phoneNumber: yup.string().required(),
   })
 
   // ** Function to handle form submit
-  const onSubmit = (_, {resetForm}) => {
+  const onSubmit = (_, { resetForm }) => {
     resetForm()
   }
 
@@ -63,11 +67,9 @@ const Details = () => {
           {({ setFieldValue }) => {
             return (
               <Form autoComplete="nope">
-                
                 <Row>
                   <Col lg="9" sm="12">
                     <Row>
-                    
                       <Col lg="6" sm="12">
                         <InputField
                           label={<Trans id="user_name" />}
@@ -75,11 +77,11 @@ const Details = () => {
                           placeholder={i18n._("user_name")}
                         />
                       </Col>
-                  
+
                       <Col lg="6" sm="12">
-                        <PhoneField 
-                          label={<Trans id="Phone Number" />} 
-                          name="phoneNumber" 
+                        <PhoneField
+                          label={<Trans id="Phone Number" />}
+                          name="phoneNumber"
                         />
                       </Col>
                     </Row>
@@ -97,11 +99,7 @@ const Details = () => {
                           color="flat-warning"
                           onClick={(e) => {
                             e.preventDefault()
-                            setFieldValue(
-                              "password",
-                              generatePassword(),
-                              false
-                            )
+                            setFieldValue("password", generatePassword(), false)
                           }}
                         >
                           {<Trans id="generate_password" />}
@@ -115,7 +113,6 @@ const Details = () => {
                         />
                       </Col>
                     </Row>
-              
                   </Col>
                 </Row>
                 <div className="d-flex justify-content-end">

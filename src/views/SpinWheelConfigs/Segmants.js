@@ -1,33 +1,34 @@
-import { Form, Formik } from 'formik'
-import React, { useState } from 'react'
 import * as yup from "yup"
-import UiBlocker from '../../Components/shared/UiBlocker'
-import CustomModal from '../../Components/shared/CustomModal'
-import InputField from  '../../Components/form/InputField'
-import SelectField from  '../../Components/form/SelectField'
-import { Button, Col, Row } from 'reactstrap'
-import { Plus } from 'react-feather'
-import { Columns } from './SegmantsColumns'
-import { FilterMatchMode } from 'primereact/api'
-import CustomDataTable from '../../Components/Datatable/customDataTable'
-import { Trans } from '@lingui/react'
+
+import { Button, Col, Row } from "reactstrap"
+import { Form, Formik } from "formik"
+import { InputField, SelectField } from "../../Components/form"
+import React, { useState } from "react"
+
+import { Columns } from "./SegmantsColumns"
+import { CustomDataTable } from "../../Components/Datatable"
+import CustomModal from "../../Components/shared/CustomModal"
+import { FilterMatchMode } from "primereact/api"
+import { Plus } from "react-feather"
+import { Trans } from "@lingui/react"
+import { UiBlocker } from "../../Components/shared"
 
 const data = [
   {
     id: 1,
-    name: 'Segmant1',
-    color: '#ff0000'
+    name: "Segmant1",
+    color: "#ff0000",
   },
   {
     id: 2,
-    name: 'Segmant2',
-    color: '#00ff00'
+    name: "Segmant2",
+    color: "#00ff00",
   },
   {
     id: 3,
-    name: 'Segmant3',
-    color: '#0000ff'
-  }
+    name: "Segmant3",
+    color: "#0000ff",
+  },
 ]
 
 const Segmants = () => {
@@ -41,10 +42,10 @@ const Segmants = () => {
   // Filter Table
   const filterFieldsSet = {
     name: { value: null, matchMode: FilterMatchMode.CONTAINS },
-    color: { value: null, matchMode: FilterMatchMode.CONTAINS }
+    color: { value: null, matchMode: FilterMatchMode.CONTAINS },
   }
-  
-  // handlers 
+
+  // handlers
   const deleteHandler = () => {
     deleteToggle()
   }
@@ -58,17 +59,17 @@ const Segmants = () => {
       label: "",
       color: "",
       textColor: "",
-      rewardId: ""
+      rewardId: "",
     }
   }
 
   const validationSchema = yup.object().shape({
     label: yup.string().required(),
-    color: yup.string().required()
+    color: yup.string().required(),
   })
 
-  const onSubmit = (values, {resetForm}) => {
-      resetForm()
+  const onSubmit = (values, { resetForm }) => {
+    resetForm()
   }
   return (
     <>
@@ -85,7 +86,6 @@ const Segmants = () => {
                 <UiBlocker>
                   <div>
                     <Row>
-
                       <Col>
                         <InputField name="label" label={<Trans id="title" />} />
                       </Col>
@@ -95,9 +95,9 @@ const Segmants = () => {
                           name="rewardId"
                           label={<Trans id="reward" />}
                           options={[
-                            {label: 'Prize1', value: 'prize1'},
-                            {label: 'Prize2', value: 'prize2'},
-                            {label: 'Prize3', value: 'prize3'}
+                            { label: "Prize1", value: "prize1" },
+                            { label: "Prize2", value: "prize2" },
+                            { label: "Prize3", value: "prize3" },
                           ]}
                         />
                       </Col>
@@ -138,29 +138,29 @@ const Segmants = () => {
           )
         }}
       </Formik>
-      <CustomDataTable 
+      <CustomDataTable
         dataKey="id"
         headerSearch={true}
-        filterDisplay={false} 
+        filterDisplay={false}
         filterFieldsSet={filterFieldsSet}
-        globalFilterFields={['name', 'color']}
+        globalFilterFields={["name", "color"]}
         columns={Columns(deleteHandler, editHandler)}
         data={data}
-        selectionMode='single'
-        selection={selectedSegmant} 
+        selectionMode="single"
+        selection={selectedSegmant}
         onSelectionChange={(e) => setSelectedSegmant(e.value)}
-        rows={5} 
+        rows={5}
         rowsPerPageOptions={[5, 10, 25, 50]}
         emptyMessage={<Trans id="No Segmants found" />}
-        tableStyle={{ minWidth: '50rem' }}
-      /> 
+        tableStyle={{ minWidth: "50rem" }}
+      />
       <CustomModal
         title={<Trans id="delete segment" />}
         toggle={deleteToggle}
         modal={modalDelete}
-        confirmTitle={<Trans id='Yes' />}
-        cancelTitle={<Trans id='No' />}
-        body={<h3>{<Trans id='are_you_sure_you_want_to_delete seg?' />}</h3>}
+        confirmTitle={<Trans id="Yes" />}
+        cancelTitle={<Trans id="No" />}
+        body={<h3>{<Trans id="are_you_sure_you_want_to_delete seg?" />}</h3>}
       />
     </>
   )

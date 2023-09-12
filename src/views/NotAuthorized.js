@@ -1,27 +1,23 @@
-// ** React Imports
-import { Link } from "react-router-dom";
+// ** Utils
+import {} from "@utils"
+// ** Styles
+import "@styles/base/pages/page-misc.scss"
 
 // ** Reactstrap Imports
-import { Button } from "reactstrap";
-
-// ** Custom Hooks
-import { useSkin } from "@hooks/useSkin";
-
-// ** Utils
-import {} from "@utils";
-
+import { Button } from "reactstrap"
+// ** React Imports
+import { Link } from "react-router-dom"
+import illustrationsDark from "@src/assets/images/pages/not-authorized-dark.svg"
 // ** Illustrations Imports
-import illustrationsLight from "@src/assets/images/pages/not-authorized.svg";
-import illustrationsDark from "@src/assets/images/pages/not-authorized-dark.svg";
-
-// ** Styles
-import "@styles/base/pages/page-misc.scss";
+import illustrationsLight from "@src/assets/images/pages/not-authorized.svg"
+// ** Custom Hooks
+import { useSkin } from "@hooks/useSkin"
 
 const NotAuthorized = () => {
   // ** Hooks
-  const { skin } = useSkin();
+  const { skin } = useSkin()
 
-  const source = skin === "dark" ? illustrationsDark : illustrationsLight;
+  const source = skin === "dark" ? illustrationsDark : illustrationsLight
 
   return (
     <div className="misc-wrapper">
@@ -113,6 +109,6 @@ const NotAuthorized = () => {
         </div>
       </div>
     </div>
-  );
-};
-export default NotAuthorized;
+  )
+}
+export default NotAuthorized

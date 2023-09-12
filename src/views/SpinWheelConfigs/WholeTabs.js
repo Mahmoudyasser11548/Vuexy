@@ -1,10 +1,11 @@
-import React, { useState } from 'react'
-import CustomCard from '../../Components/shared/CustomCard'
 import { Card, CardBody, Col, Row, TabContent, TabPane } from 'reactstrap'
-import Tabs from './Tabs'
-import Wheel from './Wheel'
+import React, { useState } from 'react'
+
+import {CustomCard} from '../../Components/shared'
 import Rewards from './Rewards'
 import Segmants from './Segmants'
+import Tabs from './Tabs'
+import Wheel from './Wheel'
 
 const WholeTabs = () => {
   const [activeTab, setActiveTab] = useState("1")

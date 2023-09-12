@@ -30,7 +30,7 @@ import { ThemeContext } from "./utility/context/ThemeColors"
 import { Toaster } from "react-hot-toast"
 import { createRoot } from "react-dom/client"
 // ** Redux Imports
-import { store } from "./redux/store"
+import { store } from "./store/store"
 // ** ThemeConfig
 import themeConfig from "./configs/themeConfig"
 

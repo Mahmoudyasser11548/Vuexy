@@ -1,5 +1,5 @@
 export { default as CheckBoxField } from "./CheckBoxField"
-export { default as DataPickerField } from "./DataPickerField"
+export { default as DatePickerField } from "./DatePickerField"
 export { default as ExportDataToExcel } from "./ExportDataToExcel"
 export { default as ImageField } from "./ImageField"
 export { default as InputField } from "./InputField"

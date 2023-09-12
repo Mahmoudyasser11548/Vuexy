@@ -1,35 +1,36 @@
-import React from 'react'
-import * as Yup from 'yup'
-import CustomCard from '../../../Components/shared/CustomCard'
-import { Trans } from '@lingui/react'
-import { Form, Formik } from 'formik'
-import InputField from '../../../Components/form/InputField'
-import LoadingButton from '../../../Components/LoadingButton'
+import * as Yup from "yup"
+
+import { Form, Formik } from "formik"
+
+import { CustomCard } from "../../../Components/shared"
+import { InputField } from "../../../Components/form"
+import { LoadingButton } from "../../../Components"
+import React from "react"
+import { Trans } from "@lingui/react"
 
 const Details = () => {
-  const roleId = ''
+  const roleId = ""
 
   const initialState = () => {
     return {
       id: "",
       name: "",
-      permissions: []
+      permissions: [],
     }
   }
-  
+
   const validationSchema = Yup.object().shape({
-    name: Yup.string().required("Role Name is Required")
+    name: Yup.string().required("Role Name is Required"),
   })
 
-  const onSubmit = (_, {resetFrom}) => {
+  const onSubmit = (_, { resetFrom }) => {
     resetFrom()
   }
 
   return (
     <>
       <CustomCard
-        title={roleId ? <Trans id="edit_role"/> : <Trans id="create_role"/>}
-        
+        title={roleId ? <Trans id="edit_role" /> : <Trans id="create_role" />}
         body={
           <Formik
             enableReinitialize={true}
@@ -42,7 +43,7 @@ const Details = () => {
                 <InputField
                   name="name"
                   placeholder={"Enter Role Name"}
-                  label={<Trans id="name"/>}
+                  label={<Trans id="name" />}
                 />
               </div>
               <br />

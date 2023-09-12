@@ -1,8 +1,8 @@
 import { Edit2, Trash2 } from "react-feather"
+
 import { Button } from "reactstrap"
 
 export const Columns = (deleteHandler, editHandler) => {
-
   const editAndDeleteTemplate = (rowData) => {
     return (
       <>
@@ -11,10 +11,10 @@ export const Columns = (deleteHandler, editHandler) => {
           className="btn-icon"
           size="sm"
           onClick={() => editHandler(rowData?.id)}
-          >
+        >
           <Edit2 size={20} />
         </Button>
-  
+
         <Button
           color="flat-danger"
           className="btn-icon"
@@ -28,8 +28,8 @@ export const Columns = (deleteHandler, editHandler) => {
   }
 
   return [
-    {field: 'name', header: 'Name', style: '22rem', sortable: true},
-    {field: 'type', header: 'Type', style: '22rem' },
-    {field: 'action', header: 'Actions', bodyTemplate: editAndDeleteTemplate }
+    { field: "name", header: "Name", style: "22rem", sortable: true },
+    { field: "type", header: "Type", style: "22rem" },
+    { field: "action", header: "Actions", bodyTemplate: editAndDeleteTemplate },
   ]
 }

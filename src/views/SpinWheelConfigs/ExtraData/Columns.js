@@ -1,8 +1,7 @@
-import { Trash2 } from "react-feather"
 import { Button } from "reactstrap"
+import { Trash2 } from "react-feather"
 
 export const Columns = (deleteHandler) => {
-
   const DeleteTemplate = (rowData) => {
     return (
       <>
@@ -19,8 +18,8 @@ export const Columns = (deleteHandler) => {
   }
 
   return [
-    {field: 'name', header: 'Name', style: '22rem', sortable: true},
-    {field: 'value', header: 'Value', style: '22rem' },
-    {field: 'action', header: 'Actions', bodyTemplate: DeleteTemplate }
+    { field: "name", header: "Name", style: "22rem", sortable: true },
+    { field: "value", header: "Value", style: "22rem" },
+    { field: "action", header: "Actions", bodyTemplate: DeleteTemplate },
   ]
 }

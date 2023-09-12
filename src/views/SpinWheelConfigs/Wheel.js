@@ -1,16 +1,20 @@
-import { Form, Formik } from 'formik'
 import * as yup from "yup"
-import React from 'react'
-import CustomCard from '../../Components/shared/CustomCard'
-import { Col, Row } from 'reactstrap'
-import SelectField from '../../Components/form/SelectField'
-import InputField from '../../Components/form/InputField'
-import DatePickerField from '../../Components/form/DatePickerField'
-import ImageField from '../../Components/form/ImageField'
-import LoadingButton from '../../Components/LoadingButton'
-import SwitchField from '../../Components/form/SwitchField'
+
+import { Col, Row } from "reactstrap"
+import {
+  DatePickerField,
+  ImageField,
+  InputField,
+  SelectField,
+  SwitchField,
+} from "../../Components/form"
+import { Form, Formik } from "formik"
+
+import { CustomCard } from "../../Components/shared"
+import { LoadingButton } from "../../Components"
+import React from "react"
+import { Trans } from "@lingui/react"
 import useFile from "../../utility/hooks/useFile"
-import { Trans } from '@lingui/react'
 
 const Wheel = () => {
   const initialValues = () => {
@@ -29,7 +33,7 @@ const Wheel = () => {
       buttonText: "",
       type: "",
       logo: useFile(),
-      circleImg: useFile()
+      circleImg: useFile(),
     }
   }
 
@@ -41,7 +45,7 @@ const Wheel = () => {
     topHeader: yup.string().required(),
     bottomHeader: yup.string().required(),
     buttonText: yup.string().required(),
-    type: yup.string().required()
+    type: yup.string().required(),
   })
 
   const onSubmit = (values) => {
@@ -50,7 +54,7 @@ const Wheel = () => {
 
   return (
     <>
-      <CustomCard 
+      <CustomCard
         showHeader={false}
         body={
           <>
@@ -64,73 +68,73 @@ const Wheel = () => {
                 return (
                   <>
                     <Form>
-                      <Row className='justify-content-between'>
-                        <Row className='w-75'>
-                          <Col md='4'>
+                      <Row className="justify-content-between">
+                        <Row className="w-75">
+                          <Col md="4">
                             <InputField
                               name="name"
                               label={<Trans id="Name" />}
                             />
                           </Col>
-                          <Col md='4'>
+                          <Col md="4">
                             <DatePickerField
                               name="expiryDate"
                               label={<Trans id="expiry_date" />}
                               enableTime={true}
                             />
                           </Col>
-                          <Col md='4'>
+                          <Col md="4">
                             <InputField
                               name="buttonText"
                               label={<Trans id="button_text" />}
                             />
                           </Col>
-                          <Col md='4'>
+                          <Col md="4">
                             <InputField
                               name="bgColor"
                               type="color"
                               label={<Trans id="background_color" />}
                             />
                           </Col>
-                          <Col md='4'>
+                          <Col md="4">
                             <InputField
                               name="color"
                               type="color"
                               label={<Trans id="color" />}
                             />
                           </Col>
-                          <Col md='4'>
+                          <Col md="4">
                             <InputField
                               name="textColor"
                               type="color"
                               label={<Trans id="text_color" />}
                             />
                           </Col>
-                          <Col md='4'>
+                          <Col md="4">
                             <InputField
                               name="topHeader"
                               label={<Trans id="top_header" />}
                             />
                           </Col>
-                          <Col md='4'>
+                          <Col md="4">
                             <InputField
                               name="bottomHeader"
                               label={<Trans id="bottom_header" />}
                             />
                           </Col>
-                          <Col md='4'>
+                          <Col md="4">
                             <SelectField
                               options={[
                                 { label: "Spin", value: "spin" },
-                                { label: "Slider", value: "slider" }
+                                { label: "Slider", value: "slider" },
                               ]}
                               label={<Trans id="Type" />}
                               name="type"
                             />
                           </Col>
-                          <Col md='4'>
-                            <SwitchField 
-                              name="active" 
+                          <Col md="4">
+                            <SwitchField
+                              name="active"
                               label={<Trans id="Active" />}
                             />
                             <SwitchField
@@ -143,8 +147,8 @@ const Wheel = () => {
                             />
                           </Col>
                         </Row>
-                        <Row className='w-25'>
-                          <Col md='3' className="d-flex flex-column">
+                        <Row className="w-25">
+                          <Col md="3" className="d-flex flex-column">
                             <ImageField
                               title="logo"
                               name="logo"

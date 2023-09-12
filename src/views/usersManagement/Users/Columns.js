@@ -1,9 +1,9 @@
-import React from 'react'
 import { Edit2, Trash2 } from "react-feather"
+
 import { Button } from "reactstrap"
+import React from "react"
 
 export const Columns = (deleteHandler, editHandler) => {
-  
   const editAndDeleteTemplate = (rowData) => {
     return (
       <>
@@ -15,7 +15,7 @@ export const Columns = (deleteHandler, editHandler) => {
         >
           <Edit2 size={20} />
         </Button>
-  
+
         <Button
           color="flat-danger"
           className="btn-icon"
@@ -29,8 +29,8 @@ export const Columns = (deleteHandler, editHandler) => {
   }
 
   return [
-    {field: 'name', header: 'Name', style: '22rem', sortable: true},
-    {field: 'email', header: 'Email', style: '22rem'},
-    {field: 'action', header: 'Actions', bodyTemplate: editAndDeleteTemplate }
+    { field: "name", header: "Name", style: "22rem", sortable: true },
+    { field: "email", header: "Email", style: "22rem" },
+    { field: "action", header: "Actions", bodyTemplate: editAndDeleteTemplate },
   ]
 }

@@ -1,11 +1,13 @@
-import fs from 'fs'
 import * as path from 'path'
+
 import { defineConfig, splitVendorChunkPlugin } from 'vite'
-import react from '@vitejs/plugin-react'
-import rollupNodePolyFill from 'rollup-plugin-node-polyfills'
+
 import NodeGlobalsPolyfillPlugin from '@esbuild-plugins/node-globals-polyfill'
 import federation from "@originjs/vite-plugin-federation"
+import fs from 'fs'
 import { lingui } from "@lingui/vite-plugin"
+import react from '@vitejs/plugin-react'
+import rollupNodePolyFill from 'rollup-plugin-node-polyfills'
 
 export default () => {
   return defineConfig({
@@ -63,7 +65,7 @@ export default () => {
         { find: 'stream', replacement: 'stream-browserify' },
         { find: 'crypto', replacement: 'crypto-browserify' },
         { find: '@src', replacement: path.resolve(__dirname, 'src') },
-        { find: '@store', replacement: path.resolve(__dirname, 'src/redux') },
+        { find: '@store', replacement: path.resolve(__dirname, 'src/store') },
         { find: '@configs', replacement: path.resolve(__dirname, 'src/configs') },
         { find: 'url', replacement: 'rollup-plugin-node-polyfills/polyfills/url' },
         { find: '@styles', replacement: path.resolve(__dirname, 'src/@core/scss') },

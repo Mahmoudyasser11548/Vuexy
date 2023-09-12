@@ -1,6 +1,6 @@
-import React from 'react'
-import SpinWheel from './SpinWheel'
-import SpinImage from './SpinImage'
+import React from "react"
+import SpinImage from "./SpinImage"
+import SpinWheel from "./SpinWheel"
 
 const Wheel = () => {
   return (
