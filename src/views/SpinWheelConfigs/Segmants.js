@@ -99,6 +99,8 @@ const Segmants = () => {
                             { label: "Prize2", value: "prize2" },
                             { label: "Prize3", value: "prize3" },
                           ]}
+                          keyValue="value"
+                          title="label"
                         />
                       </Col>
 

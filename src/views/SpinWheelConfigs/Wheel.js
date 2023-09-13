@@ -129,6 +129,8 @@ const Wheel = () => {
                                 { label: "Slider", value: "slider" },
                               ]}
                               label={<Trans id="Type" />}
+                              title="label"
+                              keyValue="value"
                               name="type"
                             />
                           </Col>
