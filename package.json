@@ -39,6 +39,7 @@
     "formik": "^2.4.2",
     "history": "^5.3.0",
     "html-to-draftjs": "1.5.0",
+    "husky": "^8.0.3",
     "i18next": "^22.0.5",
     "i18next-browser-languagedetector": "^7.0.1",
     "i18next-http-backend": "^2.0.1",
@@ -106,15 +107,24 @@
     "start": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "format": "prettier --write \"src/**/*.js\"",
-    "lint": "eslint src/**/*.js src/**/*.js",
+    "format": "prettier --ignore-path .gitignore --write \"src/**/*.{js,jsx,css,scss}\"",
+    "lint": "eslint --ignore-path .gitignore src/**/*.js src/**/*.js",
     "lint:fix": "eslint src/**/*.js --fix",
     "test": "jest",
     "extract": "lingui extract",
-    "compile": "lingui compile"
+    "compile": "lingui compile",
+    "prepare": "husky install"
   },
   "eslintConfig": {
     "extends": "react-app"
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "eslint"
+    ],
+    "*.{js,jsx,css,scss}": [
+      "prettier --write"
+    ]
   },
   "lingui": {
     "localeDir": "src/locales",
@@ -177,8 +187,10 @@
     "eslint": "^8.19.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-react": "^7.29.4",
+    "husky": "^8.0.0",
     "jest": "^29.5.0",
     "jest-environment-jsdom": "^29.5.0",
+    "lint-staged": "^14.0.1",
     "msw": "^1.2.2",
     "prettier": "^2.6.2",
     "sass-loader": "^13.1.0",
