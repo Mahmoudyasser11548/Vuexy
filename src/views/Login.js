@@ -3,7 +3,7 @@ import "../@core/scss/base/pages/authentication.scss"
 import * as Yup from "yup"
 
 import { Button, Card, CardBody, FormGroup, Label } from "reactstrap"
-import { CheckboxField, InputField, PasswordField } from "../Components/form"
+import { CheckBoxField, InputField, PasswordField } from "../Components/form"
 import { Form, Formik } from "formik"
 
 import React from "react"
@@ -69,7 +69,7 @@ const Login = () => {
                         </FormGroup>
                         <FormGroup>
                           <span style={{ color: "#0f6425" }}>
-                            <CheckboxField
+                            <CheckBoxField
                               label={<Trans id="Remember me" />}
                               name="remember"
                               id="remember-me"
